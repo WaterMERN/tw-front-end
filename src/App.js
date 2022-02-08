@@ -3,7 +3,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      app
+      {/* Header */}
+      {/* Nav */}
+      {/* Main box */}
+      {/* footer */}
+
+
     </div>
   );
 }
