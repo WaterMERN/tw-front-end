@@ -1,9 +1,12 @@
 import React from 'react';
 
-function PreviousTrip() {
+function MyTrips() {
   return (
+    <div>
+      my trips
+    </div>
     //   cards
   )
 }
 
-export default PreviousTrip
+export default MyTrips
