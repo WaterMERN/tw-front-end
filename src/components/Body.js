@@ -6,7 +6,7 @@ import MyTrips from './MyTrips';
 
 function Body() {
     return (
-        <div>
+        <div className='home-container'>
             <BodyNav />
             <Routes>
                 <Route path="/createtrip" element={<CreateTrip />} />
