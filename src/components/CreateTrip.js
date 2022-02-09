@@ -42,7 +42,7 @@ const handleSubmit = (event) => {
         <Label>
           <h2>Create a new trip</h2>
         </Label>
-       </FormGroup>
+        </FormGroup>
       <FormGroup>
         <Label>
           Trip Name
