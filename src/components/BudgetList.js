@@ -8,13 +8,6 @@ function BudgetList() {
         name: ''
     })
 
-<<<<<<< HEAD
-    
-const handleClick = (event) => {
-    event.preventDefault()
-    console.log(event.target.value)
-      }
-=======
     const handleChange = (event) => {
         const { name, value } = event.target
         setList(prevList => {
@@ -34,7 +27,6 @@ const handleClick = (event) => {
         setList({ ...list, newItem })
     }
     // console.log(list)
->>>>>>> origin/danny
     return (
         <div>
             <div>BudgetList</div>
