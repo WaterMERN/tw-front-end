@@ -23,7 +23,7 @@ const MyTripCard = () => {
 <CardColumns>
     <Card>
     <CardTitle className="trip-title">
-            Trip Name: Barcelona 
+            Trip Name: Arizona
         </CardTitle>
         <CardImg
             alt="Card image cap"
@@ -40,7 +40,7 @@ const MyTripCard = () => {
         <CardSubtitle
             className="subtitle"
         >
-            Total Cost: $1350
+            Total Cost: $1800
         </CardSubtitle>
         <Button
         color="primary"
@@ -49,16 +49,22 @@ const MyTripCard = () => {
             marginBottom: '1rem'
             }}
         >
-            Details
+            More Details
         </Button>
         <Collapse isOpen={ toggle }>
             <Card>
-            <CardBody>
+            {/* <CardBody>
                 Details about this trip: 
-            </CardBody>
-            <CardText className="trip-card-expenses">
-                Expenses: 
-                
+            </CardBody> */}
+            <CardText className="expenses">
+                <span>Expenses:</span><br/>
+            </CardText>
+            <CardText className="expenses-list">
+                Food: $300 <br/>
+                Transportation: $800<br/>
+                Lodging: $700 <br/>
+                Other: $150 <br/>
+                TOTAL COST: $1800
             </CardText>
             </Card>
         </Collapse>

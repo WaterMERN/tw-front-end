@@ -12,3 +12,15 @@
     font-size:25px;
     text-align: left;
 }
+
+.expenses, 
+.expenses-list{
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.expenses{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
