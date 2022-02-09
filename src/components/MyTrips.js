@@ -1,11 +1,16 @@
 import React from 'react';
+import MyTripCard from './MyTripCard';
+import { Row } from 'reactstrap'
 
 function MyTrips() {
   return (
     <div>
-      my trips
+  
+        <Row xl="2" xs="1">
+          <MyTripCard/>
+        </Row>
+
     </div>
-    //   cards
   )
 }
 

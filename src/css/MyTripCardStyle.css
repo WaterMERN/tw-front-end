@@ -1,0 +1,61 @@
+.total-cost,
+.total-budget{
+    padding: 10px 0 10px 0px;
+}
+
+
+
+.trip-card-expenses{
+    margin-left: 15px;
+}
+
+.trip-title{
+    margin: 20px;
+    font-weight: 800;
+    font-size:25px;
+    text-align: left;
+}
+
+.expenses, 
+.expenses-list{
+    margin-left: 15px;
+    
+}
+
+span.category{
+    font-weight: 600;
+}
+
+.expenses{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    
+}
+
+.main-card{
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+
+.span-budget, 
+.span-cost{
+    font-weight: 800;
+}
+
+.span-budget{
+    color:green;
+}
+
+.span-cost{
+    color: darkred;
+}
+
+button.more-details{
+    padding: 1rem;
+    margin-top:10px;
+    background-color: grey;
+    border:black;
+}
