@@ -59,9 +59,11 @@ export default function CreateTrip() {
     </div>
     <div>
         <div className='create-totals-container'>
-          <h4>Food</h4>
-          <h4>Transportation</h4>
-          <h4>Lodging</h4>
+          <h5>Food ----------------  $0.00 </h5>
+          <h5>Transportation -----  $0.00</h5>
+          <h5>Lodging------------- $0.00</h5>
+          <h3>Total -------- $0.00</h3>
+          <button>Save Trip</button>
         </div>
       </div>
     </div>
