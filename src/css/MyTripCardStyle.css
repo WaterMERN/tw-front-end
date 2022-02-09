@@ -53,9 +53,10 @@ span.category{
     color: darkred;
 }
 
-button.more-details{
+button.more-details-button, 
+.update-trip-button{
     padding: 1rem;
-    margin-top:10px;
+    margin:10px;
     background-color: grey;
     border:black;
 }

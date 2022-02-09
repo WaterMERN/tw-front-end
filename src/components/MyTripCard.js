@@ -13,12 +13,13 @@ import {
 from 'reactstrap'
 import '../css/MyTripCardStyle.css'
 import { useState } from 'react'
+import BudgetList from './BudgetList'
 
 const MyTripCard = () => {
     const [toggle, setToggle] = useState(false)
     const toggleCard = () => setToggle(!toggle)  //setting toggle to whatever it is not 
     
-    const [toggleUpdate, setToggleUpdate]= useState=(false)
+    const [toggleUpdate, setToggleUpdate]= useState(false)
     const updateToggle = () => setToggleUpdate(!toggleUpdate)
 
     return ( 
@@ -45,14 +46,14 @@ const MyTripCard = () => {
         >
             <span className="span-cost">Total Cost:</span> $1800
         </CardSubtitle>
-        <Button className="more-details"
+        <Button className="more-details-button"
         color="primary"
         onClick={toggleCard}
         style={{
             marginBottom: '1rem'
             }}
         >
-            More Details
+            Trip Details
         </Button>
         <Collapse isOpen={ toggle }>
             <Card>
@@ -71,14 +72,14 @@ const MyTripCard = () => {
             </CardText>
             </Card>
         </Collapse>
-        <Button className="more-details"
+        <Button className="update-trip-button"
         color="primary"
         onClick={updateToggle}
         style={{
             marginBottom: '1rem'
             }}
         >
-          Update Trip
+            Update Trip
         </Button>
         <Collapse isOpen={ toggleUpdate }>
             <Card>
@@ -89,11 +90,12 @@ const MyTripCard = () => {
                 <span>Update Expenses:</span><br/>
             </CardText>
             <CardText className="expenses-list">
-                <span className="category">Food:</span> $300 <br/>
+                {/* <span className="category">Food:</span> $300 <br/>
                 <span className="category">Transportation:</span> $800<br/>
                 <span className="category">Lodging:</span> $700 <br/>
                 <span className="category">Other:</span> $150 <br/>
-                <span className="span-cost">Total Cost:</span> $1800
+                <span className="span-cost">Total Cost:</span> $1800 */}
+                <BudgetList/>
             </CardText>
             </Card>
         </Collapse>
