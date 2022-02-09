@@ -7,10 +7,9 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <div className="App">
-      <Header />
       <NavBar />
+      <Header />
       <Body />
-
     </div>
   );
 }

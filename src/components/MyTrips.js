@@ -5,7 +5,6 @@ function MyTrips() {
     <div>
       my trips
     </div>
-    //   cards
   )
 }
 
