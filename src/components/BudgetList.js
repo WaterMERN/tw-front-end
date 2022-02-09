@@ -4,29 +4,27 @@ import { useState } from 'react'
 import ListItem from './ListItem'
 
 function BudgetList() {
-    const [list, setList] = useState({
-        name: ''
-    })
+    const [list, setList] = useState([{
+        food: 'test'
+    }])
+    const [newItem, setnewItem] = useState([])
 
     const handleChange = (event) => {
-        const { name, value } = event.target
-        setList(prevList => {
-            return {
-                ...prevList,
-                [name]: value
-            }
-        })
-        console.log(value)
+        // const { name, value } = event.target
+        setnewItem(
+            event.target.value
+        )
+        console.log(newItem)
     }
 
     const handleClick = (event) => {
         event.preventDefault()
-        const newItem = {
-            item: list.item
+        const newThing = {
+            food: newItem
         }
-        setList({ ...list, newItem })
+        setList([ ...list, newThing ])
+        console.log(list)
     }
-    // console.log(list)
     return (
         <div>
             <div>BudgetList</div>
@@ -37,15 +35,21 @@ function BudgetList() {
                 </div>
                 <input
                     onChange={handleChange}
-                    value={list.item}
+                    value={list.food}
                     name="food"
-                    type="text"
+                    type="text" 
                     placeholder="food item"
                 />
                 <button onClick={handleClick} type="submit">Add</button>
-                {/* {list.map(item => (
-                    <ListItem item={item.name}/>
-                ))} */}
+                <div className='list-container'>
+                {list.map(item => {
+                    return (
+                        // <div>{item.food}</div>
+                        <ListItem list={item}/>
+                    )
+                }
+                )}
+                </div> 
             </div>
         </div>
     )
