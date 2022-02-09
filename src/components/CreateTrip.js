@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { useState } from 'react';
 import axios from "axios"
+import BudgetList from './BudgetList';
 
 export default function CreateTrip() {
   const [trip, setTrip] = useState({
@@ -20,7 +21,7 @@ const handleChange = (event) => {
         console.log(value)
 }
 
-const handleClick = (event) => {
+const handleSubmit = (event) => {
     event.preventDefault()
     console.log(trip)
     const newTrip = {
@@ -73,17 +74,8 @@ const handleClick = (event) => {
           type="number"
         />
       </FormGroup>
-      <FormGroup>
-        <Label for="exampleRange">
-          Range
-        </Label>
-        <Input
-          id="exampleRange"
-          name="range"
-          type="range"
-        />
-      </FormGroup>
     </Form>
+    <BudgetList />
     </div>
     <div>
         <div className='create-totals-container'>
@@ -91,7 +83,7 @@ const handleClick = (event) => {
           <h5>Transportation -----  $0.00</h5>
           <h5>Lodging------------- $0.00</h5>
           <h3>Total -------- $0.00</h3>
-          <button onClick={handleClick} className='btn btn-lg btn-info'>Save Trip</button>
+          <button onSubmit={handleSubmit} className='btn btn-lg btn-info'>Save Trip</button>
         </div>
       </div>
     </div>
