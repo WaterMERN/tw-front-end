@@ -21,7 +21,7 @@ const MyTripCard = () => {
     return ( 
 <Col>
 <CardColumns>
-    <Card>
+    <Card className="main-card">
     <CardTitle className="trip-title">
             Trip Name: Arizona
         </CardTitle>
@@ -33,16 +33,16 @@ const MyTripCard = () => {
             />
         <CardBody>
         <CardSubtitle
-            className="subtitle"
+            className="total-budget"
         >
-            Total Budget: $1200
+            <span className="span-budget">Total Budget:</span> $2000
         </CardSubtitle>
         <CardSubtitle
-            className="subtitle"
+            className="total-cost"
         >
-            Total Cost: $1800
+            <span className="span-cost">Total Cost:</span> $1800
         </CardSubtitle>
-        <Button
+        <Button className="more-details"
         color="primary"
         onClick={toggleCard}
         style={{

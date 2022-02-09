@@ -1,6 +1,9 @@
-.subtitle{
+.total-cost,
+.total-budget{
     padding: 10px 0 10px 0px;
 }
+
+
 
 .trip-card-expenses{
     margin-left: 15px;
@@ -23,4 +26,29 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+.main-card{
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+
+.span-budget, 
+.span-cost{
+    font-weight: 800;
+}
+
+.span-budget{
+    color:green;
+}
+
+.span-cost{
+    color: darkred;
+}
+
+button.more-details{
+    padding: 1rem;
+    margin-top:10px;
 }
