@@ -27,7 +27,7 @@ const handleSubmit = (event) => {
     const newTrip = {
         name: trip.name
     }
-    axios.post('#', newTrip)
+      axios.post('#', newTrip)
 }
 
   return (

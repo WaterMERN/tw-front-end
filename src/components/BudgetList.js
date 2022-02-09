@@ -6,7 +6,7 @@ function BudgetList() {
 const handleClick = (event) => {
     event.preventDefault()
     console.log(event.target.value)
-  }
+      }
     return (
         <div>
             <div>BudgetList</div>
