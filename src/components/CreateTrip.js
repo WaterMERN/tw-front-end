@@ -27,8 +27,16 @@ const handleSubmit = (event) => {
     const newTrip = {
         name: trip.name
     }
+<<<<<<< HEAD
       axios.post('#', newTrip)
 }
+=======
+    setTrip = newTrip
+    
+    // axios.post('#', newTrip)
+    console.log(newTrip)
+  }
+>>>>>>> origin/danny
 
   return (
     <div className='create-container'>
@@ -36,12 +44,12 @@ const handleSubmit = (event) => {
       <div className='create-form-container'>
     <Form>
       <FormGroup>
-        <Label for="exampleEmail">
+        <Label>
           <h2>Create a new trip</h2>
         </Label>
        </FormGroup>
       <FormGroup>
-        <Label for="exampleEmail">
+        <Label>
           Trip Name
         </Label>
         <Input
@@ -53,7 +61,7 @@ const handleSubmit = (event) => {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="examplePassword">
+        <Label>
           Budget
         </Label>
         <Input
@@ -64,7 +72,7 @@ const handleSubmit = (event) => {
         />
       </FormGroup>
       <FormGroup>
-        <Label for="exampleNumber">
+        <Label>
           Number
         </Label>
         <Input
