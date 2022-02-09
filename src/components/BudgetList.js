@@ -1,12 +1,32 @@
 import React from 'react'
+import { List } from 'reactstrap'
+import { useState } from 'react'
+import ListItem from './ListItem'
 
 function BudgetList() {
+    const [list, setList] = useState({
+        name: ''
+    })
 
-    
-const handleClick = (event) => {
-    event.preventDefault()
-    console.log(event.target.value)
-  }
+    const handleChange = (event) => {
+        const { name, value } = event.target
+        setList(prevList => {
+            return {
+                ...prevList,
+                [name]: value
+            }
+        })
+        console.log(value)
+    }
+
+    const handleClick = (event) => {
+        event.preventDefault()
+        const newItem = {
+            item: list.item
+        }
+        setList({ ...list, newItem })
+    }
+    // console.log(list)
     return (
         <div>
             <div>BudgetList</div>
@@ -16,12 +36,16 @@ const handleClick = (event) => {
                     Food
                 </div>
                 <input
-                    id="exampleFood"
+                    onChange={handleChange}
+                    value={list.item}
                     name="food"
-                    placeholder="food item"
                     type="text"
+                    placeholder="food item"
                 />
-                <button onClick={handleClick} >Add</button>
+                <button onClick={handleClick} type="submit">Add</button>
+                {/* {list.map(item => (
+                    <ListItem item={item.name}/>
+                ))} */}
             </div>
         </div>
     )
