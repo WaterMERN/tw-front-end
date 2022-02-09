@@ -1,7 +1,35 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { useState } from 'react';
+import axios from "axios"
+import BudgetList from './BudgetList';
 
 export default function CreateTrip() {
+  const [trip, setTrip] = useState({
+    trip: '',
+    budget: ''
+})
+
+const handleChange = (event) => {
+    const { name, value } = event.target
+    setTrip(prevTrip => {
+        return {
+            ...prevTrip,
+            [name]: value
+          }
+        })
+        console.log(value)
+}
+
+const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(trip)
+    const newTrip = {
+        name: trip.name
+    }
+    axios.post('#', newTrip)
+}
+
   return (
     <div className='create-container'>
 
@@ -17,6 +45,7 @@ export default function CreateTrip() {
           Trip Name
         </Label>
         <Input
+          onChange={handleChange}
           id="tripname"
           name="trip"
           placeholder="trip name"
@@ -45,17 +74,8 @@ export default function CreateTrip() {
           type="number"
         />
       </FormGroup>
-      <FormGroup>
-        <Label for="exampleRange">
-          Range
-        </Label>
-        <Input
-          id="exampleRange"
-          name="range"
-          type="range"
-        />
-      </FormGroup>
     </Form>
+    <BudgetList />
     </div>
     <div>
         <div className='create-totals-container'>
@@ -63,7 +83,7 @@ export default function CreateTrip() {
           <h5>Transportation -----  $0.00</h5>
           <h5>Lodging------------- $0.00</h5>
           <h3>Total -------- $0.00</h3>
-          <button>Save Trip</button>
+          <button onSubmit={handleSubmit} className='btn btn-lg btn-info'>Save Trip</button>
         </div>
       </div>
     </div>

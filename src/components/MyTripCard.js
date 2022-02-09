@@ -60,11 +60,11 @@ const MyTripCard = () => {
                 <span>Expenses:</span><br/>
             </CardText>
             <CardText className="expenses-list">
-                Food: $300 <br/>
-                Transportation: $800<br/>
-                Lodging: $700 <br/>
-                Other: $150 <br/>
-                TOTAL COST: $1800
+                <span className="category">Food:</span> $300 <br/>
+                <span className="category">Transportation:</span> $800<br/>
+                <span className="category">Lodging:</span> $700 <br/>
+                <span className="category">Other:</span> $150 <br/>
+                <span className="span-cost">Total Cost:</span> $1800
             </CardText>
             </Card>
         </Collapse>

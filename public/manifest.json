@@ -1,6 +1,7 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+<<<<<<< HEAD
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,6 +9,8 @@
       "type": "image/x-icon"
     }
   ],
+=======
+>>>>>>> origin/danny
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

@@ -19,6 +19,10 @@
 .expenses, 
 .expenses-list{
     margin-left: 15px;
+    
+}
+
+span.category{
     font-weight: 600;
 }
 
@@ -26,6 +30,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
+    
 }
 
 .main-card{
@@ -51,4 +56,6 @@
 button.more-details{
     padding: 1rem;
     margin-top:10px;
+    background-color: grey;
+    border:black;
 }
