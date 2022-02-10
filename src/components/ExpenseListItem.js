@@ -1,7 +1,7 @@
 import React from 'react'
 import { List } from 'reactstrap'
 
-function ListItem({list}) {
+function ExpenseListItem({list}) {
   // take expense array from trip data and map through expenses 
   // use state expenseList to set array for manipulation by add expense component
   //button needs to delete expense item from expense list array with state update 
@@ -13,4 +13,4 @@ function ListItem({list}) {
   )
 }
 
-export default ListItem
+export default ExpenseListItem

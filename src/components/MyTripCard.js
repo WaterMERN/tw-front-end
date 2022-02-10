@@ -13,7 +13,7 @@ import {
 from 'reactstrap'
 import '../css/MyTripCardStyle.css'
 import { useState } from 'react'
-import BudgetList from './BudgetList'
+import ExpenseList from './ExpenseList'
 
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
@@ -97,7 +97,7 @@ const MyTripCard = () => {
                 <span className="category">Lodging:</span> $700 <br/>
                 <span className="category">Other:</span> $150 <br/>
                 <span className="span-cost">Total Cost:</span> $1800 */}
-                <BudgetList/>
+                <ExpenseList/>
             </CardText>
             </Card>
         </Collapse>
