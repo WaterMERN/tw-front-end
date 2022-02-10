@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { useState } from 'react';
 import axios from "axios"
-import BudgetList from './BudgetList';
+import ExpenseList from './ExpenseList';
 
 export default function CreateTrip() {
   const [trip, setTrip] = useState({
@@ -78,7 +78,7 @@ const handleSubmit = (event) => {
         />
       </FormGroup>
     </Form>
-    <BudgetList />
+    <ExpenseList />
   
   
     </div>

@@ -7,7 +7,7 @@ function ExpenseList({list}) {
   //button needs to delete expense item from expense list array with state update 
   return (
     <div>
-        <div>{list.food}</div>
+        <div></div>
         <button>X</button>
     </div>
   )

@@ -49,13 +49,13 @@ function AddExpenseItem() {
                 <button onClick={handleClick} type="submit">Add</button>
                 <div className='list-container'>
                {/* MOVE TO EXPENSE LIST COMPONENT */}
-                {/* {list.map(item => {
+                {list.map(item => {
                     return (
-                        // <div>{item.food}</div>
+                        <div>test</div>
                         // <ExpenseListItem list={item}/>
                     )
-                } */}
-                {/* )} */}
+                } 
+                  )} 
                 </div> 
             </div>
         </div>
