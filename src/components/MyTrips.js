@@ -3,6 +3,7 @@ import MyTripCard from './MyTripCard';
 import { Row } from 'reactstrap'
 
 function MyTrips() {
+  // need a map after pulling entire trip collection from the database 
   return (
     <div>
   

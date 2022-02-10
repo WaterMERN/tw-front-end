@@ -15,6 +15,8 @@ import '../css/MyTripCardStyle.css'
 import { useState } from 'react'
 import BudgetList from './BudgetList'
 
+// NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
+
 const MyTripCard = () => {
     const [toggle, setToggle] = useState(false)
     const toggleCard = () => setToggle(!toggle)  //setting toggle to whatever it is not 
@@ -84,7 +86,7 @@ const MyTripCard = () => {
         <Collapse isOpen={ toggleUpdate }>
             <Card>
             {/* <CardBody>
-                Details about this trip: 
+                Details about this trip: //CHANGE TO DELETE BUTTON 
             </CardBody> */}
             <CardText className="expenses">
                 <span>Update Expenses:</span><br/>

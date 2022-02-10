@@ -1,13 +1,19 @@
 import React from 'react'
 import { List } from 'reactstrap'
 import { useState } from 'react'
-import ListItem from './ListItem'
 
-function BudgetList() {
+function AddExpenseItem() {
     const [list, setList] = useState([{
         food: 'test'
     }])
     const [newItem, setnewItem] = useState([])
+
+    // expenseItem State {
+    //     category: from drop 
+    //     Title: from input field
+    //     cost: from input 
+    //   } // to be answered shortly 
+    // change to drop down list for expense categories to add to expense list state 
 
     const handleChange = (event) => {
         // const { name, value } = event.target
@@ -42,17 +48,18 @@ function BudgetList() {
                 />
                 <button onClick={handleClick} type="submit">Add</button>
                 <div className='list-container'>
+               {/* MOVE TO EXPENSE LIST COMPONENT */}
                 {list.map(item => {
                     return (
-                        // <div>{item.food}</div>
-                        <ListItem list={item}/>
+                        <div>test</div>
+                        // <ExpenseListItem list={item}/>
                     )
-                }
-                )}
+                } 
+                  )} 
                 </div> 
             </div>
         </div>
     )
 }
 
-export default BudgetList
+export default AddExpenseItem
