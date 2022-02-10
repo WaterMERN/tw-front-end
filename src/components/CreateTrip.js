@@ -68,18 +68,22 @@ const handleSubmit = (event) => {
       </FormGroup>
       <FormGroup>
         <Label>
-          Number
+          Trip Length
         </Label>
         <Input
           id="exampleNumber"
           name="number"
-          placeholder="number placeholder"
+          placeholder="Trip Length"
           type="number"
         />
       </FormGroup>
     </Form>
     <BudgetList />
+  
+  
     </div>
+  
+{/* MOVE TO TOTALS COMPONENT */}
     <div>
         <div className='create-totals-container'>
           <h5>Food ----------------  $0.00 </h5>

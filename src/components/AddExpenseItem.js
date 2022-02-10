@@ -1,7 +1,6 @@
 import React from 'react'
 import { List } from 'reactstrap'
 import { useState } from 'react'
-import ExpenseListItem from './ExpenseListItem'
 
 function AddExpenseItem() {
     const [list, setList] = useState([{
@@ -50,13 +49,13 @@ function AddExpenseItem() {
                 <button onClick={handleClick} type="submit">Add</button>
                 <div className='list-container'>
                {/* MOVE TO EXPENSE LIST COMPONENT */}
-                {list.map(item => {
+                {/* {list.map(item => {
                     return (
                         // <div>{item.food}</div>
-                        <ExpenseListItem list={item}/>
+                        // <ExpenseListItem list={item}/>
                     )
-                }
-                )}
+                } */}
+                {/* )} */}
                 </div> 
             </div>
         </div>

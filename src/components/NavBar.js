@@ -1,6 +1,7 @@
 import React from 'react';
 
 function NavBar() {
+  //HEADER ANDNAVBAR Combined
   return (
     <div className='nav-container'>
     <ul>
