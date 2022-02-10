@@ -1,10 +1,8 @@
 import React from 'react'
 import { List } from 'reactstrap'
 import { useState } from 'react'
-import ListItem from './ListItem'
-import { doesNotThrow } from 'assert'
 
-function BudgetList() {
+function AddExpenseItem() {
     const [list, setList] = useState([{
         food: 'test'
     }])
@@ -50,19 +48,18 @@ function BudgetList() {
                 />
                 <button onClick={handleClick} type="submit">Add</button>
                 <div className='list-container'>
-               
                {/* MOVE TO EXPENSE LIST COMPONENT */}
                 {list.map(item => {
                     return (
-                        // <div>{item.food}</div>
-                        <ListItem list={item}/>
+                        <div>test</div>
+                        // <ExpenseListItem list={item}/>
                     )
-                }
-                )}
+                } 
+                  )} 
                 </div> 
             </div>
         </div>
     )
 }
 
-export default BudgetList
+export default AddExpenseItem
