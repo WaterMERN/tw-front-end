@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Col, CardColumns, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Collapse} from 'reactstrap'
 import '../../css/MyTripCardStyle.css'
 import TripCardExpenses from './TripCardExpenses'
@@ -7,12 +8,26 @@ import TripCardExpenses from './TripCardExpenses'
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
 const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
+    console.log(tripId)
     const [toggle, setToggle] = useState(false)
     const toggleCard = () => setToggle(!toggle)  //setting toggle to whatever it is not 
     
     const [toggleUpdate, setToggleUpdate]= useState(false)
     const updateToggle = () => setToggleUpdate(!toggleUpdate)
 
+    const deleteTrip = `http://localhost:8000/trips/${tripId}`
+    const handleTripDelete = async (event) => {
+        event.preventDefault()
+          await axios({
+            method: 'DELETE',
+            url: deleteTrip,
+            data: null
+          })
+          .then(res => console.log(res))
+          .then(window.location.reload(false))
+     
+      
+      }
     return ( 
     <Col>
     <CardColumns>
@@ -59,7 +74,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
                 <CardText className="delete-trip">
                     <span>Are you Sure You want to Delete this trip?</span><br/>
                 </CardText>
-                <Button>Delete Trip Forever</Button>
+                <Button onClick={handleTripDelete}>Delete Trip Forever</Button>
                 </Card>
             </Collapse>
         </CardBody>

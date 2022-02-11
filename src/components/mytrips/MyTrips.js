@@ -18,19 +18,20 @@ function MyTrips() {
   }, [])
 
   if(allTrips === null) return <p>loading</p>
-  // console.log(allTrips)
+  console.log(allTrips)
   
   return (
     <Container className='trip-row'>
+       <Row xs="1" m='2' l='2' xl="2"  >
       {allTrips.map(trip =>{
         return(
-          <Row xl="2" xs="1" >
-          <MyTripCard tripId={trip.id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost}/>
-        </Row>
+         
+          <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost}/>
+       
 
         )
       })}
-        
+         </Row>
     </Container>
   )
 }
