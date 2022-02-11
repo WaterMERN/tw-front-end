@@ -1,6 +1,6 @@
   //this needs state for each catgory total 
   
-  const Totals = ({foodTotal, lodgingTotal, otherTotal, transportationTotal}) => {
+  const Totals = ({foodTotal, expenseTotal, lodgingTotal, otherTotal, transportationTotal}) => {
 
 
     return(
@@ -10,7 +10,7 @@
           <h5>Transportation -----  {transportationTotal}</h5>
           <h5>Lodging------------- {lodgingTotal}</h5>
           <h5>Other -------------- {otherTotal}</h5>
-          <h3>Total -------- $0.00</h3>
+          <h3>Total -------- {expenseTotal}</h3>
         </div>
       </div>
 

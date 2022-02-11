@@ -17,6 +17,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
     const [lodgingTotal, setLodgingTotal]= useState(0)
     const [transportationTotal, setTransportationTotal]=useState(0)
     const [otherTotal, setOtherTotal] =useState(0)
+    const [expenseTotal, setExpenseTotal] = useState(0)
 
     // console.log(itemCategory)
     // console.log(itemCost)
@@ -37,7 +38,8 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
         if (itemCategory === "Lodging"){
             setLodgingTotal(lodgingTotal + parseInt(itemCost))
         } 
-    }
+        setExpenseTotal(foodTotal + transportationTotal + otherTotal + lodgingTotal + parseInt(itemCost))
+    } 
 
     const addExpense = () => {
         const newItem = ({
@@ -128,7 +130,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
                 </Form> 
                 <button type="submit" onClick={addExpense}> Add Expense </button> 
             </Row>
-            <Totals lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal}/>
+            <Totals lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal} expenseTotal={expenseTotal}/>
 
         </div>
     )
