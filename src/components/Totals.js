@@ -1,13 +1,21 @@
   //this needs state for each catgory total 
   
+  const Totals = ({foodTotal, lodgingTotal, otherTotal, transportationTotal}) => {
+
+
+    return(
+        <div>
+        <div className='create-totals-container'>
+          <h5>Food ----------------  {foodTotal} </h5>
+          <h5>Transportation -----  {transportationTotal}</h5>
+          <h5>Lodging------------- {lodgingTotal}</h5>
+          <h5>Other -------------- {otherTotal}</h5>
+          <h3>Total -------- $0.00</h3>
+        </div>
+      </div>
+
+
+    )
+  }
   
-  //  <div>
-  //       <div className='create-totals-container'>
-  //         <h5>Food ----------------  $0.00 </h5>
-  //         <h5>Transportation -----  $0.00</h5>
-  //         <h5>Lodging------------- $0.00</h5>
-  //         <h3>Total -------- $0.00</h3>
-  //         <button onSubmit={handleSubmit} className='btn btn-lg btn-info'>Save Trip</button>
-  //       </div>
-  //     </div>
-  //   </div> 
+ export default Totals

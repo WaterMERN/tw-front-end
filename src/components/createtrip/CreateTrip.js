@@ -5,6 +5,7 @@ import axios from "axios"
 import ExpenseList from './ExpenseList';
 import AddExpenseItem from './AddExpenseItem';
 import BodyNav from '../BodyNav';
+import Totals from '../Totals';
 
 function CreateTrip() {
   const [tripName, setTripName] =useState('')
@@ -12,6 +13,8 @@ function CreateTrip() {
   const [tripLength, setTripLength] = useState(0)
   const [totalCost, setTotalCost] = useState(0)
   const [expenseList, setExpenseList] = useState([])
+
+
   // console.log(tripName)
   // console.log( tripBudget)
   // console.log(tripLength)
@@ -100,6 +103,7 @@ const handleTripSubmit = async (event) => {
     </Form>
     <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
     <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
+  
    <button onClick={handleTripSubmit}>Submit Trip</button>
    </div>
 </div>

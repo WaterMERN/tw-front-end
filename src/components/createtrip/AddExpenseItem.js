@@ -2,6 +2,7 @@ import React from 'react'
 import { List, FormGroup, Label, Input, Form, Row, Card } from 'reactstrap'
 import { useState } from 'react'
 import '../../css/addexpenseitem.css'
+import Totals from '../Totals'
 
 //state for this component is: 
 
@@ -12,11 +13,36 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
     const [itemCategory, setItemCategory] = useState('')
     const [itemCost, setItemCost] = useState(0)
     const [itemTitle, setItemTitle] = useState('')
+    const [foodTotal, setFoodTotal] =useState(0)
+    const [lodgingTotal, setLodgingTotal]= useState(0)
+    const [transportationTotal, setTransportationTotal]=useState(0)
+    const [otherTotal, setOtherTotal] =useState(0)
+
     // console.log(itemCategory)
     // console.log(itemCost)
     // console.log(itemTitle)
 
     // console.log(expenseItem)
+
+    const countTotals = () => {
+        let food = expenseList.filter(item => item.category === "Food")
+        let transportation = expenseList.filter(item => item.category === "Transportation" )
+        let lodging = expenseList.filter(item => item.category === "Lodging" )
+        let other = expenseList.filter(item => item.category === "Other" )
+        console.log(food, 'This is food')
+            if(food){
+                setFoodTotal(foodTotal + parseInt(itemCost))
+            }
+            if (transportation){
+                setTransportationTotal(transportationTotal + parseInt(itemCost)) 
+            }
+            if(lodging) {
+                setLodgingTotal(lodgingTotal + parseInt(itemCost))
+            } 
+            if(other){
+                setOtherTotal(otherTotal + parseInt(itemCost))
+            }
+        }
 
     const addExpense = () => {
         const newItem = ({
@@ -24,15 +50,29 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
             title: itemTitle,
             cost: itemCost
         })
-        // setExpenseItem({
-        //     category: itemCategory,
-        //     title:  itemTitle,
-        //     cost: itemCost
-        // })
         setExpenseList([...expenseList,newItem])
         console.log(expenseList, "list of expenses")
         console.log(newItem, "item")
-    }
+        countTotals()
+        console.log(itemCost)
+
+        }
+
+   
+        
+        
+
+        // console.log(item.cateogry)
+
+
+    // const countTotals = (event) => {
+    //     setItemCost(event.target.value)
+    //     if(expenseList.category === "Food"){
+    //         setFoodTotal(foodTotal + event.target.value)
+    //     }
+    //     console.log(event.target.value)
+    // }
+
     let currentTotal = 0
     const calculateTotal = () => {
         expenseList.forEach(item =>{
@@ -43,6 +83,12 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
             return currentTotal
     }
     calculateTotal()
+
+
+
+   
+
+
     return (
         <div>
             <h4>Add Expense Item</h4>
@@ -77,7 +123,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
                             Cost
                         </Label>
                         <Input
-                            onChange={(event) => { setItemCost(event.target.value) }}
+                            onChange={(event)=>{ setItemCost(event.target.value)}}
                             id="cost"
                             name="budget"
                             placeholder="budget"
@@ -87,6 +133,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
                 </Form> 
                 <button type="submit" onClick={addExpense}> Add Expense </button> 
             </Row>
+            <Totals lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal}/>
 
         </div>
     )
