@@ -48,6 +48,28 @@ const handleTripSubmit = async (event) => {
 
 }
 
+// const removeExpense = (index) => {
+//   let expenseToDelete = expenseList.filter(item => item !== index)
+//   setExpenseList(expenseToDelete)
+// }
+
+// const removeExpense = (expense) => {
+//   let expenseToDelete = expenseList.filter(item => {
+//     console.log(item.title)
+//     // console.log(expense.title)
+//     console.log(expense)
+//     return item.title !== expense
+//   }) 
+//   console.log(expenseToDelete)
+//   setExpenseList(expenseToDelete)
+// }
+
+// const removeExpense = (event) => {
+//   let index = expenseList.indexOf(event.currentTarget)
+//   console.log(index)
+// }
+
+
 
   return (
     <div className='create-container'>
@@ -94,12 +116,12 @@ const handleTripSubmit = async (event) => {
           type="number"
         />
       </FormGroup>
-     
-    </Form>
-    <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} />
-    <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
-   <button onClick={handleTripSubmit}>Submit Trip</button>
-   </div>
+      
+      </Form>
+      <AddExpenseItem  expenseList= {expenseList} setExpenseList={setExpenseList} />
+      <ExpenseList  expenseList ={expenseList} setExpenseList={setExpenseList}/>
+    <button onClick={handleTripSubmit}>Submit Trip</button>
+    </div>
 </div>
   
   )
