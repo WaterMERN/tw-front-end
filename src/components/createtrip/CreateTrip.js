@@ -4,6 +4,7 @@ import { useState } from 'react';
 import axios from "axios"
 import ExpenseList from './ExpenseList';
 import AddExpenseItem from './AddExpenseItem';
+import BodyNav from '../BodyNav';
 
 function CreateTrip() {
   const [tripName, setTripName] =useState('')
@@ -51,6 +52,7 @@ const handleTripSubmit = async (event) => {
 
   return (
     <div className='create-container'>
+      <BodyNav />
       <div className='create-form-container'>
     <Form>
       <FormGroup>

@@ -7,12 +7,17 @@ function ExpenseList({expenseList, setExpenseList}) {
   // use state expenseList to set array for manipulation by add expense component
   //button needs to delete expense item from expense list array with state update 
   // console.log(expenseList)
-  const removeItem = (event) => {
-    console.log('i work')
-    console.log(event.target.innerHTML)
-    let index = expenseList[event.target]
-    console.log(index)
+  const removeExpense = (expense) => {
+    let expenseToDelete = expenseList.filter(item => {
+      console.log(item.title)
+      // console.log(expense.title)
+      console.log(expense)
+      return item.title !== expense
+    }) 
+    console.log(expenseToDelete)
+    setExpenseList(expenseToDelete)
   }
+
   return (
     <>
     {expenseList.map(expense => {
@@ -23,7 +28,7 @@ function ExpenseList({expenseList, setExpenseList}) {
           title={expense.title}
           cost={expense.cost}
           category={expense.category}
-          removeItem={removeItem}
+          removeExpense={removeExpense}
           />
          
         </div>  )

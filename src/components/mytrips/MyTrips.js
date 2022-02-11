@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import MyTripCard from './MyTripCard';
 import { Container, Row } from 'reactstrap'
+import BodyNav from '../BodyNav';
 
 function MyTrips() {
   // need a map after pulling entire trip collection from the database 
@@ -22,6 +23,7 @@ function MyTrips() {
   
   return (
     <Container className='trip-row'>
+      <BodyNav />
        <Row xs="1" m='2' l='2' xl="2"  >
       {allTrips.map(trip =>{
         return(
