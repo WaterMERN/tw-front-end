@@ -21,6 +21,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
     const deleteToggle = () => setToggleDelete(!toggleDelete)
 
     const [tripExpenses, setTripExpenses] = useState(expenses)
+    const [currentCost, setCurrentCost] = useState(cost)
 
     console.log(tripExpenses)
     const deleteTrip = `http://localhost:8000/trips/${tripId}`
@@ -64,7 +65,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
                 <span className="span-budget">Total Budget:</span> ${budget}
             </CardSubtitle>
             <CardSubtitle className="total-cost" >
-                <span className="span-cost">Total Cost:</span> ${cost}
+                <span className="span-cost">Total Cost:</span> ${currentCost}
             </CardSubtitle>
             <CardSubtitle className="total-cost">
                 <span className="span-budget">Trip Length:</span> {length}
@@ -86,7 +87,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
             </Button>
             <Collapse isOpen={ toggleUpdate }>
                 <Card>  
-                    <AddExpenseItem expenseList= {tripExpenses} setExpenseList={setTripExpenses} />
+                    <AddExpenseItem expenseList= {tripExpenses} setExpenseList={setTripExpenses} totalCost={currentCost} setTotalCost={setCurrentCost}/>
                     <ExpenseList expenseList= {tripExpenses} setExpenseList={setTripExpenses}/>
                     <button onClick={handleTripUpdate}>Update Trip Expenses</button>
                 </Card>

@@ -96,7 +96,7 @@ const handleTripSubmit = async (event) => {
       </FormGroup>
      
     </Form>
-    <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} />
+    <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
     <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
    <button onClick={handleTripSubmit}>Submit Trip</button>
    </div>

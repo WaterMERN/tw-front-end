@@ -6,7 +6,7 @@ import '../../css/addexpenseitem.css'
 //state for this component is: 
 
 
-function AddExpenseItem({ expenseList, setExpenseList }) {
+function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost}) {
     // console.log(expenseList)
     const [expenseItem, setExpenseItem] = useState()
     const [itemCategory, setItemCategory] = useState('')
@@ -17,7 +17,7 @@ function AddExpenseItem({ expenseList, setExpenseList }) {
     console.log(itemTitle)
 
     // console.log(expenseItem)
-    
+
     const addExpense = () => {
         const newItem = ({
             category: itemCategory,
@@ -33,7 +33,16 @@ function AddExpenseItem({ expenseList, setExpenseList }) {
         console.log(expenseList, "list of expenses")
         console.log(newItem, "item")
     }
-    
+    let currentTotal = 0
+    const calculateTotal = () => {
+        expenseList.forEach(item =>{
+            let newItem = parseInt(item.cost)
+            currentTotal += newItem})
+            setTotalCost(currentTotal)
+            console.log(totalCost)
+            return currentTotal
+    }
+    calculateTotal()
     return (
         <div>
             <h4>Add Expense Item</h4>
