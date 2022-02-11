@@ -9,13 +9,14 @@ function MyTrips() {
   const getTrips = 'http://localhost:8000/trips'
   const fetchTrips = () => {
       fetch(getTrips)
-    .then(response => response.json())
-    .then(json => setAllTrips(json))
-    .catch(console.error)
+        .then(response => response.json())
+        .then(json => setAllTrips(json))
+        .catch(console.error)
   }
   useEffect(() =>{
   fetchTrips()
   }, [])
+  
   if(allTrips === null) return <p>loading</p>
   // console.log(allTrips)
   

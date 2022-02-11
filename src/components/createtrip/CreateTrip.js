@@ -17,7 +17,8 @@ function CreateTrip() {
 
   const [trip, setTrip] = useState()
 // console.log(trip)
-
+// NEED A CALULATE TOTAL COST FUNCTION USE FILTER METHOD FOR COST FROM EXPENSES then set that total to totalCost State 
+//can get data to post to db 50% of the time on 1st try 100% on second try if I click again without changing the data
 let newTrip = {
     name: tripName,
     budget: tripBudget,
@@ -25,18 +26,21 @@ let newTrip = {
     cost:  totalCost,
     expenses: expenseList
   }
+  console.log(newTrip)
+  const getTripData = () => {
+     setTrip(newTrip)
+     console.log(trip) 
+  }
+
+const postTrips = 'http://localhost:8000/trips'
 const handleTripSubmit = (event) => {
   event.preventDefault()
-  // axios.post(postURL, trip)
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
-  setTrip(newTrip)
-  console.log(trip)
-
+  getTripData()
+   axios({
+    method: 'post',
+    url: postTrips,
+    data: trip
+  })
 }
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, List } from 'reactstrap'
-import ExpenseListItem from '../ExpenseListItem'
+import ExpenseListItem from '../createtrip/ExpenseListItem'
 import '../../css/expenseList.css'
 
 const TripCardExpenses = ({ tripExpenses}) => {

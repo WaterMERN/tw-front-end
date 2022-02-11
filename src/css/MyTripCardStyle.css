@@ -59,3 +59,11 @@ button.more-details{
     background-color: grey;
     border:black;
 }
+button{
+    margin: 10px
+}
+
+.delete-trip{
+    display: flex;
+    justify-content: center;
+}
