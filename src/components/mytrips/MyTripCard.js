@@ -33,9 +33,19 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
           })
           .then(res => console.log(res))
           .then(window.location.reload(false))
-     
-      
       }
+
+    const updateTrip = `http://localhost:8000/trips/${tripId}`
+    const handleTripUpdate = async (event) => {
+        event.preventDefault();
+        await axios({
+            method: "PUT",
+            url: updateTrip,
+            data: {expenses: tripExpenses},
+        })
+        .then((res) => console.log(res))
+        .then(window.location.reload(false));
+    }
     return ( 
     <Col>
     <CardColumns>
@@ -78,7 +88,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
                 <Card>  
                     <AddExpenseItem expenseList= {tripExpenses} setExpenseList={setTripExpenses} />
                     <ExpenseList expenseList= {tripExpenses} setExpenseList={setTripExpenses}/>
-                    <button >Update Trip Expenses</button>
+                    <button onClick={handleTripUpdate}>Update Trip Expenses</button>
                 </Card>
             </Collapse>
             <Button className="more-details" color="primary" onClick={deleteToggle} style={{ marginBottom: '1rem' }} >
