@@ -18,16 +18,19 @@ function AddExpenseItem({ expenseList, setExpenseList }) {
     // console.log(expenseItem)
     
     const addExpense = () => {
-        setExpenseItem({
+        const newItem = ({
             category: itemCategory,
-            title:  itemTitle,
+            title: itemTitle,
             cost: itemCost
         })
-        setExpenseList([...expenseList,expenseItem])
-        setItemCost('')
-        setItemTitle('')
+        // setExpenseItem({
+        //     category: itemCategory,
+        //     title:  itemTitle,
+        //     cost: itemCost
+        // })
+        setExpenseList([...expenseList,newItem])
         console.log(expenseList, "list of expenses")
-        console.log(expenseItem, "item")
+        console.log(newItem, "item")
     }
     
     return (

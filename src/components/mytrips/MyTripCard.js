@@ -1,22 +1,12 @@
-import {
-    Col,
-    CardColumns, 
-    Card, 
-    CardImg, 
-    CardBody, 
-    CardTitle, 
-    CardSubtitle, 
-    CardText, 
-    Button, 
-    Collapse
-}
-from 'reactstrap'
-import '../css/MyTripCardStyle.css'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { Col, CardColumns, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Collapse} from 'reactstrap'
+import '../../css/MyTripCardStyle.css'
+import TripCardExpenses from './TripCardExpenses'
+
 
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
-const MyTripCard = () => {
+const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
     const [toggle, setToggle] = useState(false)
     const toggleCard = () => setToggle(!toggle)  //setting toggle to whatever it is not 
     
@@ -28,7 +18,7 @@ const MyTripCard = () => {
 <CardColumns>
     <Card className="main-card">
     <CardTitle className="trip-title">
-            Trip Name: Arizona
+            Trip Name: {name}
         </CardTitle>
         <CardImg
             alt="Card image cap"
@@ -40,12 +30,12 @@ const MyTripCard = () => {
         <CardSubtitle
             className="total-budget"
         >
-            <span className="span-budget">Total Budget:</span> $2000
+            <span className="span-budget">Total Budget:</span> ${budget}
         </CardSubtitle>
         <CardSubtitle
             className="total-cost"
         >
-            <span className="span-cost">Total Cost:</span> $1800
+            <span className="span-cost">Total Cost:</span> ${cost}
         </CardSubtitle>
         <Button className="more-details"
         color="primary"
@@ -65,11 +55,7 @@ const MyTripCard = () => {
                 <span>Expenses:</span><br/>
             </CardText>
             <CardText className="expenses-list">
-                <span className="category">Food:</span> $300 <br/>
-                <span className="category">Transportation:</span> $800<br/>
-                <span className="category">Lodging:</span> $700 <br/>
-                <span className="category">Other:</span> $150 <br/>
-                <span className="span-cost">Total Cost:</span> $1800
+             <TripCardExpenses tripExpenses = {expenses} />
             </CardText>
             </Card>
         </Collapse>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { useState } from 'react';
 import axios from "axios"
@@ -15,17 +15,27 @@ function CreateTrip() {
   console.log( tripBudget)
   console.log(tripLength)
 
-  const [trip, setTrip] = useState({
-    name: {tripName},
-    budget: {tripBudget},
-    length: {tripLength},
-    cost:  {totalCost},
-    expenses: {expenseList}
-    
-})
+  const [trip, setTrip] = useState()
+// console.log(trip)
 
+let newTrip = {
+    name: tripName,
+    budget: tripBudget,
+    length: tripLength,
+    cost:  totalCost,
+    expenses: expenseList
+  }
 const handleTripSubmit = (event) => {
   event.preventDefault()
+  // axios.post(postURL, trip)
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
+  setTrip(newTrip)
+  console.log(trip)
 
 }
 
@@ -75,11 +85,12 @@ const handleTripSubmit = (event) => {
           type="number"
         />
       </FormGroup>
-      {/* <button onSubmit={handleTripSubmit}>Submit</button> */}
+     
     </Form>
     <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} />
-    {/* <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/> */}
-  </div>
+    <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
+   <button onClick={handleTripSubmit}>Submit Trip</button>
+   </div>
 </div>
   
   )

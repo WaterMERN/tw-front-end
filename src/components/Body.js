@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import BodyNav from './BodyNav';
 import { Route, Routes } from 'react-router-dom';
 import CreateTrip from './CreateTrip';
-import MyTrips from './MyTrips';
+import MyTrips from './mytrips/MyTrips';
 
 function Body() {
+ 
     return (
         <div className='home-container'>
             <BodyNav />
