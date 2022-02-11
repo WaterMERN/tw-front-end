@@ -16,15 +16,15 @@ function MyTrips() {
   useEffect(() =>{
   fetchTrips()
   }, [])
-  
+
   if(allTrips === null) return <p>loading</p>
   // console.log(allTrips)
   
   return (
-    <Container>
+    <Container className='trip-row'>
       {allTrips.map(trip =>{
         return(
-          <Row xl="2" xs="1">
+          <Row xl="2" xs="1" >
           <MyTripCard tripId={trip.id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost}/>
         </Row>
 

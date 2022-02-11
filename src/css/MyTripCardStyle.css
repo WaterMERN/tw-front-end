@@ -67,3 +67,10 @@ button{
     display: flex;
     justify-content: center;
 }
+
+
+.trip-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
