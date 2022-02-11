@@ -9,8 +9,6 @@ function NavBar() {
         <ul>
           <Link to='/'><li>Home</li></Link>
           <Link to='/about'><li>About</li></Link>
-          <Link to='/createtrip'><li>Create Trip</li></Link>
-          <Link to='/mytrips'><li>My Trips</li></Link>
         </ul>
       </div>
     </div>
@@ -18,3 +16,5 @@ function NavBar() {
 }
 
 export default NavBar
+{/* <Link to='/createtrip'><li>Create Trip</li></Link>
+<Link to='/mytrips'><li>My Trips</li></Link> */}
