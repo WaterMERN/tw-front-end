@@ -12,9 +12,9 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
     const [itemCategory, setItemCategory] = useState('')
     const [itemCost, setItemCost] = useState(0)
     const [itemTitle, setItemTitle] = useState('')
-    console.log(itemCategory)
-    console.log(itemCost)
-    console.log(itemTitle)
+    // console.log(itemCategory)
+    // console.log(itemCost)
+    // console.log(itemTitle)
 
     // console.log(expenseItem)
 
@@ -39,7 +39,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
             let newItem = parseInt(item.cost)
             currentTotal += newItem})
             setTotalCost(currentTotal)
-            console.log(totalCost)
+            // console.log(totalCost)
             return currentTotal
     }
     calculateTotal()

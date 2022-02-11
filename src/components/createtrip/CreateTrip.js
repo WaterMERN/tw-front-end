@@ -11,9 +11,9 @@ function CreateTrip() {
   const [tripLength, setTripLength] = useState(0)
   const [totalCost, setTotalCost] = useState(0)
   const [expenseList, setExpenseList] = useState([])
-  console.log(tripName)
-  console.log( tripBudget)
-  console.log(tripLength)
+  // console.log(tripName)
+  // console.log( tripBudget)
+  // console.log(tripLength)
 
   
 // console.log(trip)
