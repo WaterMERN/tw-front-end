@@ -1,0 +1,8 @@
+.expense-item-container{
+    display:flex;
+}
+
+p{
+    display:inline-block;
+    margin: 10px;
+}

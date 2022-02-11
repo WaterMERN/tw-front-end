@@ -13,7 +13,6 @@ import {
 from 'reactstrap'
 import '../css/MyTripCardStyle.css'
 import { useState } from 'react'
-import ExpenseList from './ExpenseList'
 
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
@@ -48,14 +47,14 @@ const MyTripCard = () => {
         >
             <span className="span-cost">Total Cost:</span> $1800
         </CardSubtitle>
-        <Button className="more-details-button"
+        <Button className="more-details"
         color="primary"
         onClick={toggleCard}
         style={{
             marginBottom: '1rem'
             }}
         >
-            Trip Details
+            More Details
         </Button>
         <Collapse isOpen={ toggle }>
             <Card>
@@ -74,14 +73,14 @@ const MyTripCard = () => {
             </CardText>
             </Card>
         </Collapse>
-        <Button className="update-trip-button"
+        <Button className="more-details"
         color="primary"
         onClick={updateToggle}
         style={{
             marginBottom: '1rem'
             }}
         >
-            Update Trip
+          Update Trip
         </Button>
         <Collapse isOpen={ toggleUpdate }>
             <Card>
@@ -92,12 +91,11 @@ const MyTripCard = () => {
                 <span>Update Expenses:</span><br/>
             </CardText>
             <CardText className="expenses-list">
-                {/* <span className="category">Food:</span> $300 <br/>
+                <span className="category">Food:</span> $300 <br/>
                 <span className="category">Transportation:</span> $800<br/>
                 <span className="category">Lodging:</span> $700 <br/>
                 <span className="category">Other:</span> $150 <br/>
-                <span className="span-cost">Total Cost:</span> $1800 */}
-                <ExpenseList/>
+                <span className="span-cost">Total Cost:</span> $1800
             </CardText>
             </Card>
         </Collapse>

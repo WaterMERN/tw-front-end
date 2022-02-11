@@ -3,39 +3,46 @@ import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { useState } from 'react';
 import axios from "axios"
 import ExpenseList from './ExpenseList';
+import AddExpenseItem from './AddExpenseItem';
 
-export default function CreateTrip() {
+const fakeExpenses = [
+  {category: "lodging",
+  title: "hotel",
+  cost: 80},
+  {category: "Food",
+    title: "McDonalds",
+    cost: 90}
+]
+
+function CreateTrip() {
+  const [tripName, setTripName] =useState('')
+  const [tripBudget, setTripBudget] =useState(0)
+  const [tripLength, setTripLength] = useState(0)
+  const [totalCost, setTotalCost] = useState(0)
+  const [expenseList, setExpenseList] = useState([fakeExpenses])
+
+  console.log(tripName)
+  console.log( tripBudget)
+  console.log(tripLength)
+  console.log(expenseList)
+
   const [trip, setTrip] = useState({
-    trip: '',
-    budget: ''
+    name: {tripName},
+    budget: {tripBudget},
+    length: {tripLength},
+    cost:  {totalCost},
+    expenses: {expenseList}
+    
 })
 
-const handleChange = (event) => {
-    const { name, value } = event.target
-    setTrip(prevTrip => {
-        return {
-            ...prevTrip,
-            [name]: value
-          }
-        })
-        console.log(value)
+const handleTripSubmit = (event) => {
+  event.preventDefault()
+
 }
 
-const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log(trip)
-    const newTrip = {
-        name: trip.name
-    }
-    setTrip = newTrip
-    
-    // axios.post('#', newTrip)
-    console.log(newTrip)
-  }
 
   return (
     <div className='create-container'>
-
       <div className='create-form-container'>
     <Form>
       <FormGroup>
@@ -48,7 +55,7 @@ const handleSubmit = (event) => {
           Trip Name
         </Label>
         <Input
-          onChange={handleChange}
+          onChange={(event) => { setTripName(event.target.value) }}
           id="tripname"
           name="trip"
           placeholder="trip name"
@@ -57,9 +64,10 @@ const handleSubmit = (event) => {
       </FormGroup>
       <FormGroup>
         <Label>
-          Budget
+          Desired Budget
         </Label>
         <Input
+          onChange={(event) => { setTripBudget(event.target.value) }}
           id="budget"
           name="budget"
           placeholder="budget"
@@ -71,28 +79,21 @@ const handleSubmit = (event) => {
           Trip Length
         </Label>
         <Input
+          onChange={(event) => { setTripLength(event.target.value) }}
           id="exampleNumber"
           name="number"
           placeholder="Trip Length"
           type="number"
         />
       </FormGroup>
+      {/* <button onSubmit={handleTripSubmit}>Submit</button> */}
     </Form>
-    <ExpenseList />
+    <AddExpenseItem expenseList={expenseList} setExpenseList={setExpenseList} />
+    <ExpenseList expenseList={expenseList} setExpenseList={setExpenseList}/>
+  </div>
+</div>
   
-  
-    </div>
-  
-{/* MOVE TO TOTALS COMPONENT */}
-    <div>
-        <div className='create-totals-container'>
-          <h5>Food ----------------  $0.00 </h5>
-          <h5>Transportation -----  $0.00</h5>
-          <h5>Lodging------------- $0.00</h5>
-          <h3>Total -------- $0.00</h3>
-          <button onSubmit={handleSubmit} className='btn btn-lg btn-info'>Save Trip</button>
-        </div>
-      </div>
-    </div>
   )
 }
+
+export default CreateTrip
