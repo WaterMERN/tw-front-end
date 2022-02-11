@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   //HEADER ANDNAVBAR Combined
@@ -6,12 +7,18 @@ function NavBar() {
     <div className='header-container'>
       <div className='nav-container'>
         <ul>
-          <li>Home</li>
-          <li>About</li>
+          <Link to='/'><li>Home</li></Link>
+          <Link to='/about'><li>About</li></Link>
         </ul>
       </div>
     </div>
   )
 }
 
+<<<<<<< HEAD
 export default NavBar
+=======
+export default NavBar
+{/* <Link to='/createtrip'><li>Create Trip</li></Link>
+<Link to='/mytrips'><li>My Trips</li></Link> */}
+>>>>>>> origin/main
