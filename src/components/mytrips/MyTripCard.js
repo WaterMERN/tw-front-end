@@ -4,6 +4,8 @@ import { Col, CardColumns, Card, CardImg, CardBody, CardTitle, CardSubtitle, Car
 import '../../css/MyTripCardStyle.css'
 import TripCardExpenses from './TripCardExpenses'
 
+import AddExpenseItem from '../createtrip/AddExpenseItem'
+import ExpenseList from '../createtrip/ExpenseList'
 
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
@@ -15,6 +17,12 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
     const [toggleUpdate, setToggleUpdate]= useState(false)
     const updateToggle = () => setToggleUpdate(!toggleUpdate)
 
+    const [toggleDelete, setToggleDelete]= useState(false)
+    const deleteToggle = () => setToggleDelete(!toggleDelete)
+
+    const [tripExpenses, setTripExpenses] = useState(expenses)
+
+    console.log(tripExpenses)
     const deleteTrip = `http://localhost:8000/trips/${tripId}`
     const handleTripDelete = async (event) => {
         event.preventDefault()
@@ -59,14 +67,24 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
                 {/* <CardBody>
                     Details about this trip: 
                 </CardBody> */}
-                <CardText className="expenses"> <span>Expenses:</span><br/> </CardText>
+                <CardText className="expenses"> <span>Current Expenses:</span><br/> </CardText>
                 <CardText className="expenses-list">  <TripCardExpenses tripExpenses = {expenses} /> </CardText>
                 </Card>
             </Collapse>
             <Button className="more-details" color="primary" onClick={updateToggle} style={{ marginBottom: '1rem' }} >
-            Delete Trip
+                Update Expenses
             </Button>
             <Collapse isOpen={ toggleUpdate }>
+                <Card>  
+                    <AddExpenseItem expenseList= {tripExpenses} setExpenseList={setTripExpenses} />
+                    <ExpenseList expenseList= {tripExpenses} setExpenseList={setTripExpenses}/>
+                    <button >Update Trip Expenses</button>
+                </Card>
+            </Collapse>
+            <Button className="more-details" color="primary" onClick={deleteToggle} style={{ marginBottom: '1rem' }} >
+            Delete Trip
+            </Button>
+            <Collapse isOpen={ toggleDelete }>
                 <Card>
                 {/* <CardBody>
                     Details about this trip: //CHANGE TO DELETE BUTTON 

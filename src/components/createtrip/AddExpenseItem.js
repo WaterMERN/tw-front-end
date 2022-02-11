@@ -1,6 +1,7 @@
 import React from 'react'
-import { List, FormGroup, Label, Input, Form, Row } from 'reactstrap'
+import { List, FormGroup, Label, Input, Form, Row, Card } from 'reactstrap'
 import { useState } from 'react'
+import '../../css/addexpenseitem.css'
 
 //state for this component is: 
 
