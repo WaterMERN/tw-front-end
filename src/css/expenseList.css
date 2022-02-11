@@ -1,0 +1,17 @@
+.individual-expense{
+    margin: 5px;
+}
+.labels{
+    color: rgb(146, 23, 228)
+}
+span{
+    color:black
+}
+.expense-item-container{
+    display:flex;
+}
+
+p{
+    display:inline-block;
+    margin: 10px;
+}
