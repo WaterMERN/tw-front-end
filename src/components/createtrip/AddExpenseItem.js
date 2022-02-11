@@ -1,22 +1,23 @@
 import React from 'react'
-import { List, FormGroup, Label, Input, Form, Row } from 'reactstrap'
+import { List, FormGroup, Label, Input, Form, Row, Card } from 'reactstrap'
 import { useState } from 'react'
+import '../../css/addexpenseitem.css'
 
 //state for this component is: 
 
 
-function AddExpenseItem({ expenseList, setExpenseList }) {
+function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost}) {
     // console.log(expenseList)
     const [expenseItem, setExpenseItem] = useState()
     const [itemCategory, setItemCategory] = useState('')
     const [itemCost, setItemCost] = useState(0)
     const [itemTitle, setItemTitle] = useState('')
-    console.log(itemCategory)
-    console.log(itemCost)
-    console.log(itemTitle)
+    // console.log(itemCategory)
+    // console.log(itemCost)
+    // console.log(itemTitle)
 
     // console.log(expenseItem)
-    
+
     const addExpense = () => {
         const newItem = ({
             category: itemCategory,
@@ -32,7 +33,16 @@ function AddExpenseItem({ expenseList, setExpenseList }) {
         console.log(expenseList, "list of expenses")
         console.log(newItem, "item")
     }
-    
+    let currentTotal = 0
+    const calculateTotal = () => {
+        expenseList.forEach(item =>{
+            let newItem = parseInt(item.cost)
+            currentTotal += newItem})
+            setTotalCost(currentTotal)
+            // console.log(totalCost)
+            return currentTotal
+    }
+    calculateTotal()
     return (
         <div>
             <h4>Add Expense Item</h4>
