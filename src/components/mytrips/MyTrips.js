@@ -29,8 +29,6 @@ function MyTrips() {
         return(
          
           <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost}/>
-       
-
         )
       })}
          </Row>

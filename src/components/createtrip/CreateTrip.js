@@ -44,9 +44,8 @@ const handleTripSubmit = async (event) => {
     })
     .then(res => console.log(res))
   } catch (error) {
-    
+     
   }
-
 }
 
 

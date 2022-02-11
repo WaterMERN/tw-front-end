@@ -18,20 +18,38 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
 
     // console.log(expenseItem)
 
+    const countTotals = () => {
+
+        let food = expenseList.filter(item => item.category === "Food")
+        let transportation = expenseList.filter(item => item.category === "Transportation" )
+        let lodging = expenseList.filter(item => item.category === "Lodging" )
+        let other = expenseList.filter(item => item.category === "Other" )
+        // if(food){
+        //     setFoodTotal(foodTotal + parseInt(itemCost))
+        // } 
+        // if (transportation){
+        //     setTransportationTotal(transportationTotal + parseInt(itemCost))
+        // }
+        // if(lodging) {
+        //     setLodgingTotal(lodgingTotal + parseInt(itemCost))
+        // } 
+        // if(other){
+        //     setOtherTotal(otherTotal + parseInt(itemCost))
+        // }
+    }
+
     const addExpense = () => {
         const newItem = ({
             category: itemCategory,
             title: itemTitle,
             cost: itemCost
         })
-        // setExpenseItem({
-        //     category: itemCategory,
-        //     title:  itemTitle,
-        //     cost: itemCost
-        // })
+
         setExpenseList([...expenseList,newItem])
         console.log(expenseList, "list of expenses")
         console.log(newItem, "item")
+        // countTotals()
+        // console.log(itemCost)
     }
     let currentTotal = 0
     const calculateTotal = () => {
