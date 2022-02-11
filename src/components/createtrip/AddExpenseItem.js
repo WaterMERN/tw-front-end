@@ -1,20 +1,19 @@
 import React from 'react'
-import { FormGroup, Label, Input, Form, Row } from 'reactstrap'
+import { List, FormGroup, Label, Input, Form, Row } from 'reactstrap'
 import { useState } from 'react'
-
 
 //state for this component is: 
 
 
 function AddExpenseItem({ expenseList, setExpenseList }) {
-    
+    // console.log(expenseList)
     const [expenseItem, setExpenseItem] = useState()
     const [itemCategory, setItemCategory] = useState('')
     const [itemCost, setItemCost] = useState(0)
     const [itemTitle, setItemTitle] = useState('')
-    // console.log(itemCategory)
-    // console.log(itemCost)
-    // console.log(itemTitle)
+    console.log(itemCategory)
+    console.log(itemCost)
+    console.log(itemTitle)
 
     // console.log(expenseItem)
     
@@ -31,7 +30,7 @@ function AddExpenseItem({ expenseList, setExpenseList }) {
         // })
         setExpenseList([...expenseList,newItem])
         console.log(expenseList, "list of expenses")
-        console.log(expenseItem, "item")
+        console.log(newItem, "item")
     }
     
     return (

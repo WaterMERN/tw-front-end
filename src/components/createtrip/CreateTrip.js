@@ -1,42 +1,50 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { useState } from 'react';
 import axios from "axios"
 import ExpenseList from './ExpenseList';
 import AddExpenseItem from './AddExpenseItem';
 
-const fakeExpenses = [
-  {category: "lodging",
-  title: "hotel",
-  cost: 80},
-  {category: "Food",
-    title: "McDonalds",
-    cost: 90}
-]
-
 function CreateTrip() {
   const [tripName, setTripName] =useState('')
   const [tripBudget, setTripBudget] =useState(0)
   const [tripLength, setTripLength] = useState(0)
   const [totalCost, setTotalCost] = useState(0)
-  const [expenseList, setExpenseList] = useState([fakeExpenses])
-
+  const [expenseList, setExpenseList] = useState([])
   console.log(tripName)
   console.log( tripBudget)
   console.log(tripLength)
-  console.log(expenseList)
 
-  const [trip, setTrip] = useState({
-    name: {tripName},
-    budget: {tripBudget},
-    length: {tripLength},
-    cost:  {totalCost},
-    expenses: {expenseList}
+  
+// console.log(trip)
+// NEED A CALULATE TOTAL COST FUNCTION USE FILTER METHOD FOR COST FROM EXPENSES then set that total to totalCost State 
+//can get data to post to db 50% of the time on 1st try 100% on second try if I click again without changing the data
+let newTrip = {
+    name: tripName,
+    budget: tripBudget,
+    length: tripLength,
+    cost:  totalCost,
+    expenses: expenseList
+  }
+  console.log(newTrip)
+  const getTripData = () => {
     
-})
+    //  console.log(trip) 
+  }
 
-const handleTripSubmit = (event) => {
+const postTrips = 'http://localhost:8000/trips'
+const handleTripSubmit = async (event) => {
   event.preventDefault()
+  try {
+    await axios({
+      method: 'post',
+      url: postTrips,
+      data: newTrip
+    })
+    .then(res => console.log(res))
+  } catch (error) {
+    
+  }
 
 }
 
@@ -86,11 +94,12 @@ const handleTripSubmit = (event) => {
           type="number"
         />
       </FormGroup>
-      {/* <button onSubmit={handleTripSubmit}>Submit</button> */}
+     
     </Form>
-    <AddExpenseItem expenseList={expenseList} setExpenseList={setExpenseList} />
-    <ExpenseList expenseList={expenseList} setExpenseList={setExpenseList}/>
-  </div>
+    <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} />
+    <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
+   <button onClick={handleTripSubmit}>Submit Trip</button>
+   </div>
 </div>
   
   )

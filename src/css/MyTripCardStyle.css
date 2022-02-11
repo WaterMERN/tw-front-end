@@ -60,3 +60,18 @@ button.more-details-button,
     background-color: grey;
     border:black;
 }
+button{
+    margin: 10px
+}
+
+.delete-trip{
+    display: flex;
+    justify-content: center;
+}
+
+
+.trip-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
