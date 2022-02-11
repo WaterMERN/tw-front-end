@@ -25,24 +25,19 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
     // console.log(expenseItem)
 
     const countTotals = () => {
-        let food = expenseList.filter(item => item.category === "Food")
-        let transportation = expenseList.filter(item => item.category === "Transportation" )
-        let lodging = expenseList.filter(item => item.category === "Lodging" )
-        let other = expenseList.filter(item => item.category === "Other" )
-        console.log(food, 'This is food')
-            if(food){
-                setFoodTotal(foodTotal + parseInt(itemCost))
-            }
-            if (transportation){
-                setTransportationTotal(transportationTotal + parseInt(itemCost)) 
-            }
-            if(lodging) {
-                setLodgingTotal(lodgingTotal + parseInt(itemCost))
-            } 
-            if(other){
-                setOtherTotal(otherTotal + parseInt(itemCost))
-            }
-        }
+        if (itemCategory === "Food"){
+            setFoodTotal(foodTotal + parseInt(itemCost))
+        } 
+        if (itemCategory === "Transportation"){
+            setTransportationTotal(transportationTotal + parseInt(itemCost))
+        } 
+        if (itemCategory === "Other"){
+            setOtherTotal(otherTotal + parseInt(itemCost))
+        } 
+        if (itemCategory === "Lodging"){
+            setLodgingTotal(lodgingTotal + parseInt(itemCost))
+        } 
+    }
 
     const addExpense = () => {
         const newItem = ({
@@ -55,7 +50,6 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
         console.log(newItem, "item")
         countTotals()
         console.log(itemCost)
-
         }
 
    
@@ -102,6 +96,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
                         id="exampleSelect" 
                         name="select" 
                         type="select" 
+                        value={expenseList.category}
                         onChange={(event) => { setItemCategory(event.target.value) }}>
                             <option>Choose Type</option>
                             <option>Food</option>
@@ -142,54 +137,3 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
 export default AddExpenseItem
 
 
-// const [expenseList, setExpenseList] = useState([{
-//     food: 'test'
-// }])
-// const [newItem, setnewItem] = useState([])
-
-// // expenseList State {
-// //     category: from drop
-// //     Title: from input field
-// //     cost: from input
-// //   } // to be answered shortly
-// // change to drop down list for expense categories to add to expense list state
-
-// const handleChange = (event) => {
-//     // const { name, value } = event.target
-//     setnewItem(
-//         event.target.value
-//     )
-//     console.log(newItem)
-// }
-
-// const handleClick = (event) => {
-//     event.preventDefault()
-//     const newThing = {
-//         food: newItem
-//     }
-//     setList([ ...list, newThing ])
-//     console.log(list)
-// }
-// <div>
-// <div for="exampleNumber">
-//     Food
-// </div>
-// <input
-//     onChange={handleChange}
-//     value={list.food}
-//     name="food"
-//     type="text"
-//     placeholder="food item"
-// />
-// <button onClick={handleClick} type="submit">Add</button>
-// <div className='list-container'>
-// {/* MOVE TO EXPENSE LIST COMPONENT */}
-// {list.map(item => {
-//     return (
-//         <div>test</div>
-//         // <ExpenseListItem list={item}/>
-//     )
-// }
-//     )}
-// </div>
-// </div>
