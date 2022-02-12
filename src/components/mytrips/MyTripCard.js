@@ -45,7 +45,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
             data: {expenses: tripExpenses},
         })
         .then((res) => console.log(res))
-        .then(window.location.reload(false));
+        
     }
     return ( 
     <Col>

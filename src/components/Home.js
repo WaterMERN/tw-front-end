@@ -10,7 +10,12 @@ const Home = () => {
         email: '',
         password: ''
     }
+    let userLogin = {
+        email: '',
+        password: ''
+    }
     const [user, setUser] = useState(newUser)
+    const [login, setLogin] = useState(userLogin)
     const [toggleCreate, setToggleCreate] = useState(false)
     const toggleCreateAccount = () => setToggleCreate(!toggleCreate) 
     const [toggleLogin, setToggleLogin] = useState(false)
@@ -19,10 +24,13 @@ const Home = () => {
     const handleChange = (event) => {
         event.preventDefault()
         setUser({ ...user, [event.target.id]: event.target.value,});
-        console.log(user);
+        setLogin({ ...login, [event.target.id]: event.target.value,})
+        console.log(user)
+        console.log(login);
     }
 
     const createURL = 'http://localhost:8000/createaccount'
+    const loginURL = 'http://localhost:8000/login'
     const createAccount = async (event) => {
         //axios post 
         event.preventDefault()
@@ -30,7 +38,7 @@ const Home = () => {
             await axios({
             method: 'post',
             url: createURL,
-            data: newUser
+            data: user
             })
             .then(res => console.log(res))
         } catch (error) {
@@ -38,8 +46,21 @@ const Home = () => {
         }
           
     }
-    const loginAccount = () => {
+    const loginAccount = async (event) => {
         //axios post
+        event.preventDefault()
+        try {
+            await axios({
+            method: 'post',
+            url: loginURL,
+            data: user
+            })
+            .then(res => console.log(res.data.token))
+            //take res.data.token and assign it to a state that can be used in context
+            .then(json => console.log(json))
+        } catch (error) {
+            
+        }
     }
     return(
         <div className="account-page">
@@ -56,7 +77,7 @@ const Home = () => {
                 <InputGroupText >Password</InputGroupText>
                 <Input id="password" onChange={handleChange} value={user.password} placeholder="password" />
             </InputGroup>
-            <Button> Login into Account</Button>
+            <Button onClick={loginAccount}> Login into Account</Button>
             </Collapse>
             <Button className="account-buttons" color="primary" onClick={toggleCreateAccount} style={{ marginBottom: '1rem' }} >
                Create Account
@@ -71,7 +92,7 @@ const Home = () => {
                 <InputGroupText >Password</InputGroupText>
                 <Input id="password" onChange={handleChange} value={user.password} placeholder="password" />
             </InputGroup>
-            <Button> Create New Account</Button>
+            <Button onClick={createAccount}> Create New Account</Button>
             </Collapse>
         
         </div>
