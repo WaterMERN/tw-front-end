@@ -9,12 +9,13 @@ import Totals from '../Totals'
 // lodgingTotal={lodgingTotal} setLodgintTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal}
 
 
-function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal, foodTotal, setFoodTotal, transportationTotal, setTransportationTotal, expenseTotal,setExpenseTotal, expenseList, setExpenseList, totalCost, setTotalCost}) {
+
+function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal, foodTotal, setFoodTotal, transportationTotal, setTransportationTotal, expenseTotal,setExpenseTotal, expenseList, setExpenseList, totalCost, setTotalCost, expenseItem, setExpenseItem, itemCategory, setItemCategory, itemCost, setItemCost, itemTitle, setItemTitle}) {
     console.log(expenseList)
-    const [expenseItem, setExpenseItem] = useState()
-    const [itemCategory, setItemCategory] = useState('')
-    const [itemCost, setItemCost] = useState(0)
-    const [itemTitle, setItemTitle] = useState('')
+    // const [expenseItem, setExpenseItem] = useState()
+    // const [itemCategory, setItemCategory] = useState('')
+    // const [itemCost, setItemCost] = useState(0)
+    // const [itemTitle, setItemTitle] = useState('')
     // const [foodTotal, setFoodTotal] =useState(0)
     // const [lodgingTotal, setLodgingTotal]= useState(0)
     // const [transportationTotal, setTransportationTotal]=useState(0)
@@ -55,36 +56,6 @@ function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal
         countTotals()
         console.log(itemCost)
         }
-
-   
-        
-        
-
-        // console.log(item.cateogry)
-
-
-    // const countTotals = (event) => {
-    //     setItemCost(event.target.value)
-    //     if(expenseList.category === "Food"){
-    //         setFoodTotal(foodTotal + event.target.value)
-    //     }
-    //     console.log(event.target.value)
-    // }
-
-    let currentTotal = 0
-    const calculateTotal = () => {
-        expenseList.forEach(item =>{
-            let newItem = parseInt(item.cost)
-            currentTotal += newItem})
-            setTotalCost(currentTotal)
-            // console.log(totalCost)
-            return currentTotal
-    }
-    calculateTotal()
-
-
-
-   
 
 
     return (

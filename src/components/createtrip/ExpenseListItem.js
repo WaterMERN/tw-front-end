@@ -13,7 +13,7 @@ function ExpenseListItem({ removeExpense, expense, removeItem }) {
       <p>Category: {expense.category}</p>
       <p>Name: {expense.title}</p>
       <p>Cost: ${expense.cost}</p>
-      <button className="remove-expense-button" onClick={() => {removeExpense(expense.title)}}>Remove</button>
+      {/* <button className="remove-expense-button" onClick={() => {removeExpense(expense.title)}}>Remove</button> */}
     </div>
   )
 }

@@ -14,10 +14,11 @@
     const [totalCost, setTotalCost] = useState(0)
     const [expenseList, setExpenseList] = useState([])
 
-    // const [expenseItem, setExpenseItem] = useState()
-    // const [itemCategory, setItemCategory] = useState('')
-    // const [itemCost, setItemCost] = useState(0)
-    // const [itemTitle, setItemTitle] = useState('')
+    const [expenseItem, setExpenseItem] = useState()
+    const [itemCategory, setItemCategory] = useState('')
+    const [itemCost, setItemCost] = useState(0)
+    const [itemTitle, setItemTitle] = useState('')
+
     const [foodTotal, setFoodTotal] =useState(0)
     const [lodgingTotal, setLodgingTotal]= useState(0)
     const [transportationTotal, setTransportationTotal]=useState(0)
@@ -111,8 +112,9 @@
         </FormGroup>
       
       </Form>
-      <AddExpenseItem lodgingTotal={lodgingTotal} setLodgingTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal} expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
-      <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
+      <AddExpenseItem lodgingTotal={lodgingTotal} setLodgingTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal} expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost} expenseItem={expenseItem} setExpenseItem={setExpenseItem} itemCategory={itemCategory} setItemCategory={setItemCategory} itemCost={itemCost} setItemCost={setItemCost} itemTitle={itemTitle} setItemTitle={setItemTitle}/>
+
+      <ExpenseList lodgingTotal={lodgingTotal} setLodgingTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal} expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}  expenseItem={expenseItem} setExpenseItem={setExpenseItem} itemCategory={itemCategory} setItemCategory={setItemCategory} itemCost={itemCost} setItemCost={setItemCost} itemTitle={itemTitle} setItemTitle={setItemTitle}/>
     
     <button onClick={handleTripSubmit}>Submit Trip</button>
     </div>
