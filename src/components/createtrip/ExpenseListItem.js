@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../css/expenseList.css'
+import { useState } from 'react'
 
 function ExpenseListItem({ removeExpense, expense, removeItem }) {
   // take expense array from trip data and map through expenses 

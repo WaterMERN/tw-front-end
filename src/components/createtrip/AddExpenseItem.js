@@ -4,20 +4,22 @@ import { useState } from 'react'
 import '../../css/addexpenseitem.css'
 import Totals from '../Totals'
 
+
 //state for this component is: 
+// lodgingTotal={lodgingTotal} setLodgintTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal}
 
 
-function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost}) {
-    // console.log(expenseList)
+function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal, foodTotal, setFoodTotal, transportationTotal, setTransportationTotal, expenseTotal,setExpenseTotal, expenseList, setExpenseList, totalCost, setTotalCost}) {
+    console.log(expenseList)
     const [expenseItem, setExpenseItem] = useState()
     const [itemCategory, setItemCategory] = useState('')
     const [itemCost, setItemCost] = useState(0)
     const [itemTitle, setItemTitle] = useState('')
-    const [foodTotal, setFoodTotal] =useState(0)
-    const [lodgingTotal, setLodgingTotal]= useState(0)
-    const [transportationTotal, setTransportationTotal]=useState(0)
-    const [otherTotal, setOtherTotal] =useState(0)
-    const [expenseTotal, setExpenseTotal] = useState(0)
+    // const [foodTotal, setFoodTotal] =useState(0)
+    // const [lodgingTotal, setLodgingTotal]= useState(0)
+    // const [transportationTotal, setTransportationTotal]=useState(0)
+    // const [otherTotal, setOtherTotal] =useState(0)
+    // const [expenseTotal, setExpenseTotal] = useState(0)
 
     // console.log(itemCategory)
     // console.log(itemCost)
@@ -131,7 +133,6 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
                 <button type="submit" onClick={addExpense}> Add Expense </button> 
             </Row>
             <Totals lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal} expenseTotal={expenseTotal}/>
-
         </div>
     )
 }
