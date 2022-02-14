@@ -6,15 +6,14 @@ import MyTrips from './mytrips/MyTrips';
 import About from './About';
 import Home from './Home';
 function Body() {
-    const [authToken, setAuthToken] = useState()
-    console.log(authToken)
+ 
     return (
         <div className='home-container'>
             
             <Routes>
-                <Route path="/" element={<Home authToken={authToken} setAuthToken={setAuthToken}/>} />
-                <Route path="/createtrip" element={<CreateTrip authToken={authToken} setAuthToken={setAuthToken}/>} />
-                <Route path="/mytrips" element={<MyTrips authToken={authToken} setAuthToken={setAuthToken}/>} />
+                <Route path="/" element={<Home />} />
+                <Route path="/createtrip" element={<CreateTrip />} />
+                <Route path="/mytrips" element={<MyTrips />} />
                 <Route path="/about" element={<About/>} />
             </Routes>
         </div>

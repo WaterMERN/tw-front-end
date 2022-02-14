@@ -9,7 +9,7 @@ import ExpenseList from '../createtrip/ExpenseList'
 
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
-const MyTripCard = ({tripId, budget, expenses, name, length, cost, authToken }) => {
+const MyTripCard = ({tripId, budget, expenses, name, length, cost }) => {
     // console.log(tripId)
     const [toggle, setToggle] = useState(false)
     const toggleCard = () => setToggle(!toggle)  //setting toggle to whatever it is not 
@@ -24,7 +24,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost, authToken }) 
     const [currentCost, setCurrentCost] = useState(cost)
 
     // console.log(tripExpenses)
-    const authorizeURL = { Authorization:` Bearer ${authToken}`}   
+    const authorizeURL = { Authorization:` Bearer ${localStorage.getItem('token')}`}   
     console.log (authorizeURL)
     const deleteTrip = `http://localhost:8000/trips/${tripId}`
     const handleTripDelete = async (event) => {

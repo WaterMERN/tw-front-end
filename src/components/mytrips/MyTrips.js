@@ -3,12 +3,12 @@ import MyTripCard from './MyTripCard';
 import { Container, Row } from 'reactstrap'
 import BodyNav from '../BodyNav';
 
-function MyTrips( { authToken, setAuthToken } ) {
+function MyTrips( ) {
   // need a map after pulling entire trip collection from the database 
   const [ allTrips, setAllTrips] = useState(null)
-
+ 
   const authorizeURL = { 'Accept': 'application/json', 
-  'Authorization' :` Bearer ${authToken}`}
+  'Authorization' :` Bearer ${localStorage.getItem('token')}`}
  console.log (authorizeURL)
   const getTrips = 'http://localhost:8000/trips'
   const fetchTrips = () => {
@@ -22,7 +22,8 @@ function MyTrips( { authToken, setAuthToken } ) {
   fetchTrips()
   }, [])
 
-  if(allTrips === null) return <p>loading</p>
+ 
+  if(allTrips === null) return <h1 className='login-message'> LOADING TRIPS... if message persists please go to Home page and login to access My Trips</h1>
   console.log(allTrips)
   
   return (
@@ -32,7 +33,7 @@ function MyTrips( { authToken, setAuthToken } ) {
       {allTrips.map(trip =>{
         return(
          
-          <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost} authToken={authToken} />
+          <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost} />
         )
       })}
          </Row>

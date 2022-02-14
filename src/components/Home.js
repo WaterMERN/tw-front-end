@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InputGroup, InputGroupText, Input, Button, Collapse} from 'reactstrap'
 import '../css/home.css'
 import axios from "axios";
-import { Link } from "react-router-dom";
+import BodyNav from "./BodyNav";
 
 const Home = ({ authToken, setAuthToken }) => {
     
@@ -56,16 +56,16 @@ const Home = ({ authToken, setAuthToken }) => {
             url: loginURL,
             data: user
             })
-            .then(res => setAuthToken(res.data.token))
+            .then(res => localStorage.setItem("token", res.data.token))
             //take res.data.token and assign it to a state that can be used in context
-            .then(console.log(authToken))
-            
+                        
         } catch (error) {
             
         }
     }
     return(
         <div className="account-page">
+            <BodyNav />
             <Button className="account-buttons" color="primary" onClick={toggleLoginAccount} style={{ marginBottom: '1rem' }} >
                Login 
             </Button>
@@ -79,7 +79,7 @@ const Home = ({ authToken, setAuthToken }) => {
                 <InputGroupText >Password</InputGroupText>
                 <Input id="password" onChange={handleChange} value={user.password} placeholder="password" />
             </InputGroup>
-          <Button onClick={loginAccount}> <Link to= "/mytrips" >  Login into Account</Link></Button>
+          <Button onClick={loginAccount}> Login into Account</Button>
             </Collapse>
             <Button className="account-buttons" color="primary" onClick={toggleCreateAccount} style={{ marginBottom: '1rem' }} >
                Create Account
