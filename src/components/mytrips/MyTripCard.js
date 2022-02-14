@@ -25,7 +25,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost }) => {
 
     // console.log(tripExpenses)
     const authorizeURL = { Authorization:` Bearer ${localStorage.getItem('token')}`}   
-    console.log (authorizeURL)
+    // console.log (authorizeURL)
     const deleteTrip = `http://localhost:8000/trips/${tripId}`
     const handleTripDelete = async (event) => {
         event.preventDefault()

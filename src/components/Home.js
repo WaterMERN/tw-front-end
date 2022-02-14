@@ -50,15 +50,16 @@ const Home = ({ authToken, setAuthToken }) => {
     const loginAccount = async (event) => {
         //axios post
         event.preventDefault()
+        
         try {
             await axios({
             method: 'post',
             url: loginURL,
-            data: user
+            data: login
             })
             .then(res => localStorage.setItem("token", res.data.token))
             //take res.data.token and assign it to a state that can be used in context
-                        
+            .then(localStorage.setItem('User', login.email))                
         } catch (error) {
             
         }

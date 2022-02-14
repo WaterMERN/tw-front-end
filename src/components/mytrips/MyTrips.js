@@ -15,16 +15,19 @@ function MyTrips( ) {
       fetch(getTrips, 
         { headers: authorizeURL})
         .then(response => response.json())
-        .then(json => setAllTrips(json))
+        .then(json => setAllTrips(json.filter((trip) => {
+          if (trip.owner === localStorage.getItem('User')) return trip
+        })))
+           
         .catch(console.error)
   }
   useEffect(() =>{
   fetchTrips()
   }, [])
-
- 
+  
   if(allTrips === null) return <h1 className='login-message'> LOADING TRIPS... if message persists please go to Home page and login to access My Trips</h1>
   console.log(allTrips)
+    
   
   return (
     <Container className='trip-row'>

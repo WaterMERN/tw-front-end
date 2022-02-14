@@ -25,7 +25,9 @@ function CreateTrip() {
       budget: tripBudget,
       length: tripLength,
       cost:  totalCost,
-      expenses: expenseList
+      expenses: expenseList,
+      owner: localStorage.getItem('User')
+      
     }
     console.log(newTrip)
     const getTripData = () => {
