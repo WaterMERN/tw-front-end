@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { InputGroup, InputGroupText, Input, Button, Collapse} from 'reactstrap'
 import '../css/home.css'
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ authToken, setAuthToken }) => {
     
 
     let newUser = {
@@ -28,7 +29,7 @@ const Home = () => {
         console.log(user)
         console.log(login);
     }
-
+    
     const createURL = 'http://localhost:8000/createaccount'
     const loginURL = 'http://localhost:8000/login'
     const createAccount = async (event) => {
@@ -55,9 +56,10 @@ const Home = () => {
             url: loginURL,
             data: user
             })
-            .then(res => console.log(res.data.token))
+            .then(res => setAuthToken(res.data.token))
             //take res.data.token and assign it to a state that can be used in context
-            .then(json => console.log(json))
+            .then(console.log(authToken))
+            
         } catch (error) {
             
         }
@@ -77,7 +79,7 @@ const Home = () => {
                 <InputGroupText >Password</InputGroupText>
                 <Input id="password" onChange={handleChange} value={user.password} placeholder="password" />
             </InputGroup>
-            <Button onClick={loginAccount}> Login into Account</Button>
+           <Link to= "/mytrips" > <Button onClick={loginAccount}> Login into Account</Button></Link>
             </Collapse>
             <Button className="account-buttons" color="primary" onClick={toggleCreateAccount} style={{ marginBottom: '1rem' }} >
                Create Account

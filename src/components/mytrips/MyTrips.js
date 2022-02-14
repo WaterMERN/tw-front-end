@@ -3,13 +3,17 @@ import MyTripCard from './MyTripCard';
 import { Container, Row } from 'reactstrap'
 import BodyNav from '../BodyNav';
 
-function MyTrips() {
+function MyTrips( { authToken, setAuthToken } ) {
   // need a map after pulling entire trip collection from the database 
   const [ allTrips, setAllTrips] = useState(null)
 
+  const authorizeURL = { 'Accept': 'application/json', 
+  'Authorization' :` Bearer ${authToken}`}
+ console.log (authorizeURL)
   const getTrips = 'http://localhost:8000/trips'
   const fetchTrips = () => {
-      fetch(getTrips)
+      fetch(getTrips, 
+        { headers: authorizeURL})
         .then(response => response.json())
         .then(json => setAllTrips(json))
         .catch(console.error)
@@ -28,7 +32,7 @@ function MyTrips() {
       {allTrips.map(trip =>{
         return(
          
-          <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost}/>
+          <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost} authToken={authToken} />
         )
       })}
          </Row>

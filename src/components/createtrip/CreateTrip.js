@@ -6,7 +6,7 @@ import ExpenseList from './ExpenseList';
 import AddExpenseItem from './AddExpenseItem';
 import BodyNav from '../BodyNav';
 
-function CreateTrip() {
+function CreateTrip({ authToken, setAuthToken }) {
   const [tripName, setTripName] =useState('')
   const [tripBudget, setTripBudget] =useState(0)
   const [tripLength, setTripLength] = useState(0)
@@ -33,6 +33,8 @@ let newTrip = {
     //  console.log(trip) 
   }
 
+const authorizeURL = { Authorization:` Bearer ${authToken}`}
+console.log (authorizeURL)
 const postTrips = 'http://localhost:8000/trips'
 const handleTripSubmit = async (event) => {
   event.preventDefault()
@@ -40,11 +42,12 @@ const handleTripSubmit = async (event) => {
     await axios({
       method: 'post',
       url: postTrips,
-      data: newTrip
+      data: newTrip,
+      headers: authorizeURL
     })
     .then(res => console.log(res))
   } catch (error) {
-     
+
   }
 }
 
@@ -97,6 +100,7 @@ const handleTripSubmit = async (event) => {
       </FormGroup>
      
     </Form>
+
     <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
     <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
    <button onClick={handleTripSubmit}>Submit Trip</button>
