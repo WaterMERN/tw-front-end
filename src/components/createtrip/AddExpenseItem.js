@@ -60,7 +60,7 @@ function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal
 
 
     return (
-        <div>
+        <div className="add-expense-container">
             <h3 className="add-expense-title">Add Your Expenses Here:</h3>
             <Row>
                 <Form>

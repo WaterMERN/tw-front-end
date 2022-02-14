@@ -47,14 +47,7 @@ code {
   /* border: 1px solid rgb(197, 197, 197); */
 /* } */
 
-.home-container {
-  width: 900px;
-  height: auto;
-  margin: 100px auto;
-  border: 2px solid black;
-  border-radius: 10px;
-  /* border: 1px solid rgb(197, 197, 197); */
-}
+
 
 .nav-container {
   display: flex;
@@ -74,6 +67,9 @@ code {
 .nav-container li {
   display: inline;
   padding: 0px 20px;
+  color:#0396A6;
+  list-style: none;
+  text-decoration: none !important;
   
 }
 
@@ -100,10 +96,7 @@ a.nav-link.active{
   border:3px solid #85def2;
 }
 
-.create-form-container {
-  width: 450px;
-  padding: 25px
-}
+
 
 .create-container {
   display: flex;
@@ -141,4 +134,10 @@ margin-top: 15px;
 
 .footer-title{
  color: black;
+}
+
+.totals-container{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
 }
