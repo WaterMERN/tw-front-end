@@ -4,7 +4,7 @@ import '../css/home.css'
 import axios from "axios";
 import BodyNav from "./BodyNav";
 
-const Home = ({ authToken, setAuthToken }) => {
+const Home = () => {
     
 
     let newUser = {
@@ -18,9 +18,16 @@ const Home = ({ authToken, setAuthToken }) => {
     const [user, setUser] = useState(newUser)
     const [login, setLogin] = useState(userLogin)
     const [toggleCreate, setToggleCreate] = useState(false)
-    const toggleCreateAccount = () => setToggleCreate(!toggleCreate) 
+    const toggleCreateAccount = () => { 
+        setToggleCreate(!toggleCreate)
+        setAccountText('')
+        setToggleLogin(false)}
     const [toggleLogin, setToggleLogin] = useState(false)
-    const toggleLoginAccount = () => setToggleLogin(!toggleLogin) 
+    const toggleLoginAccount = () => {
+        setToggleLogin(!toggleLogin) 
+        setAccountText('')
+        setToggleCreate(false)}
+    const [accountText, setAccountText] = useState('')
 
     const handleChange = (event) => {
         event.preventDefault()
@@ -35,6 +42,7 @@ const Home = ({ authToken, setAuthToken }) => {
     const createAccount = async (event) => {
         //axios post 
         event.preventDefault()
+        setAccountText('Account setup Login to  create your fist trip!')
         try {
             await axios({
             method: 'post',
@@ -42,15 +50,15 @@ const Home = ({ authToken, setAuthToken }) => {
             data: user
             })
             .then(res => console.log(res))
-        } catch (error) {
             
-        }
+        } catch (error) {}
+        
           
     }
     const loginAccount = async (event) => {
         //axios post
         event.preventDefault()
-        
+        setAccountText('Login Successful')
         try {
             await axios({
             method: 'post',
@@ -60,17 +68,18 @@ const Home = ({ authToken, setAuthToken }) => {
             .then(res => localStorage.setItem("token", res.data.token))
             //take res.data.token and assign it to a state that can be used in context
             .then(localStorage.setItem('User', login.email))                
-        } catch (error) {
-            
+        } catch (error) {  
         }
+        
     }
     return(
         <div className="account-page">
             <BodyNav />
-            <Button className="account-buttons" color="primary" onClick={toggleLoginAccount} style={{ marginBottom: '1rem' }} >
+            <Button className="account-buttons" color="primary" onClick={toggleLoginAccount } style={{ marginBottom: '1rem' }} >
                Login 
             </Button>
             <Collapse isOpen= { toggleLogin }>
+            <h4>{ accountText }</h4>
             <InputGroup>
                 <InputGroupText >Username</InputGroupText>
                 <Input id="email" onChange={handleChange} value={user.email} placeholder="email" />
@@ -81,11 +90,13 @@ const Home = ({ authToken, setAuthToken }) => {
                 <Input id="password" onChange={handleChange} value={user.password} placeholder="password" />
             </InputGroup>
           <Button onClick={loginAccount}> Login into Account</Button>
+          
             </Collapse>
             <Button className="account-buttons" color="primary" onClick={toggleCreateAccount} style={{ marginBottom: '1rem' }} >
                Create Account
             </Button>
             <Collapse isOpen= { toggleCreate }>
+            <h4>{ accountText }</h4>
             <InputGroup>
                 <InputGroupText >Username</InputGroupText>
                 <Input id="email" onChange={handleChange} value={user.email} placeholder="email" />
@@ -95,7 +106,8 @@ const Home = ({ authToken, setAuthToken }) => {
                 <InputGroupText >Password</InputGroupText>
                 <Input id="password" onChange={handleChange} value={user.password} placeholder="password" />
             </InputGroup>
-            <Button onClick={createAccount}> Create New Account</Button>
+            <Button onClick={createAccount }> Create New Account</Button>
+            
             </Collapse>
         
         </div>
