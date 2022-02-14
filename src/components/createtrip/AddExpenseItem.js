@@ -3,6 +3,7 @@ import { List, FormGroup, Label, Input, Form, Row, Card } from 'reactstrap'
 import { useState } from 'react'
 import '../../css/addexpenseitem.css'
 import Totals from '../Totals'
+import '../../css/CreateTrip.css'
 
 
 //state for this component is: 
@@ -60,7 +61,7 @@ function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal
 
     return (
         <div>
-            <h4>Add Expense Item</h4>
+            <h3 className="add-expense-title">Add Your Expenses Here:</h3>
             <Row>
                 <Form>
                     <FormGroup>
@@ -68,31 +69,34 @@ function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal
                             Select Type
                         </Label>
                         <Input 
+                        className="add-expense-input"
                         id="exampleSelect" 
                         name="select" 
                         type="select" 
                         value={expenseList.category}
                         onChange={(event) => { setItemCategory(event.target.value) }}>
-                            <option>Choose Type</option>
+                            <option>Select Type</option>
                             <option>Food</option>
                             <option>Lodging</option>
                             <option>Transportation</option>
                             <option>Other</option>
                         </Input>
                         <Label>
-                            Title
+                            Description
                         </Label>
                         <Input
+                        className="add-expense-input"
                             onChange={(event) => { setItemTitle(event.target.value) }}
                             id="category"
                             name="budget"
-                            placeholder="budget"
+                            placeholder="description"
                             type="text"
                         />
                         <Label>
                             Cost
                         </Label>
                         <Input
+                            className="add-expense-input"
                             onChange={(event)=>{ setItemCost(event.target.value)}}
                             id="cost"
                             name="budget"
@@ -101,9 +105,9 @@ function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal
                         />
                     </FormGroup>
                 </Form> 
-                <button type="submit" onClick={addExpense}> Add Expense </button> 
+                <button className="add-expense-button" type="submit" onClick={addExpense}> Add Expense </button> 
             </Row>
-            <Totals lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal} expenseTotal={expenseTotal}/>
+            <Totals className="totals-component"lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal} expenseTotal={expenseTotal}/>
         </div>
     )
 }

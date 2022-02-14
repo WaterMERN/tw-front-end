@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -51,11 +52,13 @@ code {
 
 .nav-container ul{
   list-style: none;
+
 }
 
 .nav-container li {
   display: inline;
   padding: 0px 20px;
+  
 }
 
 .nav-home {
@@ -77,6 +80,10 @@ code {
   top: 359px;
 }
 
+a.nav-link.active{
+  border:3px solid #85def2;
+}
+
 .create-form-container {
   width: 450px;
   padding: 25px
@@ -89,6 +96,17 @@ code {
 .create-totals-container {
   width: 450px;
   padding: 25px;
+  background-color: rgb(214, 211, 211);
+  border: 3px solid #D99A4E;
+  border-radius: 10px;
+  margin: 10px;
+
+}
+
+.trip-cost-title{
+margin-bottom: 10px;
+margin-left: 10px; 
+margin-top: 15px;
 }
 
 .list-container {

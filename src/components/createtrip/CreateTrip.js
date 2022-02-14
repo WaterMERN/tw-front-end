@@ -6,6 +6,7 @@
   import AddExpenseItem from './AddExpenseItem';
   import BodyNav from '../BodyNav';
   import Totals from '../Totals';
+  import '../../css/CreateTrip.css'
 
   function CreateTrip() {
     const [tripName, setTripName] =useState('')
@@ -71,7 +72,8 @@
       <Form>
         <FormGroup>
           <Label>
-            <h2>Create a new trip</h2>
+            <h3 className="create-new-trip-title">Create a new trip</h3>
+            <p className="fill-in-form"> Fill in the form below to get started.</p>
           </Label>
           </FormGroup>
         <FormGroup>
@@ -79,10 +81,11 @@
             Trip Name
           </Label>
           <Input
+          className="create-trip-input"
             onChange={(event) => { setTripName(event.target.value) }}
             id="tripname"
             name="trip"
-            placeholder="trip name"
+            placeholder="Trip Name"
             type="text"
           />
         </FormGroup>
@@ -96,13 +99,15 @@
             name="budget"
             placeholder="budget"
             type="text"
+            className="create-trip-input"
           />
         </FormGroup>
         <FormGroup>
-          <Label>
+          <Label >
             Trip Length
           </Label>
           <Input
+          className="create-trip-input"
             onChange={(event) => { setTripLength(event.target.value) }}
             id="exampleNumber"
             name="number"
@@ -114,9 +119,9 @@
       </Form>
       <AddExpenseItem lodgingTotal={lodgingTotal} setLodgingTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal} expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost} expenseItem={expenseItem} setExpenseItem={setExpenseItem} itemCategory={itemCategory} setItemCategory={setItemCategory} itemCost={itemCost} setItemCost={setItemCost} itemTitle={itemTitle} setItemTitle={setItemTitle}/>
 
-      <ExpenseList lodgingTotal={lodgingTotal} setLodgingTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal} expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}  expenseItem={expenseItem} setExpenseItem={setExpenseItem} itemCategory={itemCategory} setItemCategory={setItemCategory} itemCost={itemCost} setItemCost={setItemCost} itemTitle={itemTitle} setItemTitle={setItemTitle}/>
+      <ExpenseList className="expense-list-component" lodgingTotal={lodgingTotal} setLodgingTotal={setLodgingTotal} setOtherTotal={setOtherTotal} otherTotal={otherTotal} setFoodTotal={setFoodTotal} foodTotal={foodTotal} setTransportationTotal={setTransportationTotal} transportationTotal={transportationTotal} setExpenseTotal={setExpenseTotal} expenseTotal={expenseTotal} expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}  expenseItem={expenseItem} setExpenseItem={setExpenseItem} itemCategory={itemCategory} setItemCategory={setItemCategory} itemCost={itemCost} setItemCost={setItemCost} itemTitle={itemTitle} setItemTitle={setItemTitle}/>
     
-    <button onClick={handleTripSubmit}>Submit Trip</button>
+    <button className="submit-trip-button" onClick={handleTripSubmit}>Submit Trip</button>
     </div>
   </div>
     

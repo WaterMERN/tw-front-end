@@ -1,7 +1,7 @@
   import React from 'react'
   import { List } from 'reactstrap'
   import ExpenseListItem from './ExpenseListItem'
-
+  import '../../css/CreateTrip.css'
 
   function ExpenseList({lodgingTotal, setLodgingTotal, otherTotal, setOtherTotal, foodTotal, setFoodTotal, transportationTotal, setTransportationTotal, expenseTotal, setExpenseTotal, expenseList, setExpenseList, totalCost, setTotalCost}, itemCategory, setItemCategory, itemCost, setItemCost, itemTitle, setItemTitle) {
     // take expense array from trip data and map through expenses 
@@ -22,7 +22,8 @@
       if (itemCategory === "Lodging"){
           setLodgingTotal(lodgingTotal - parseInt(itemCost))
       } 
-      setExpenseTotal(expenseTotal - parseInt(itemCost))
+      // setFoodTotal(foodTotal - parseInt(itemCost) )
+      setExpenseTotal(expenseTotal - foodTotal || lodgingTotal || otherTotal || transportationTotal)
       // setExpenseTotal(foodTotal - transportationTotal - otherTotal - lodgingTotal - parseInt(itemCost))
   } 
 
@@ -47,7 +48,7 @@
       <>
       {expenseList.map(expense => {
         return(
-        <div>
+        <div className="expense-list-container">
           <ExpenseListItem  
             expense={expense}
             title={expense.title}

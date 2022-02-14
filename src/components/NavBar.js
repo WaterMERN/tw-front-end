@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function NavBar() {
   //HEADER ANDNAVBAR Combined
   return (
@@ -14,6 +15,7 @@ function NavBar() {
         </ul>
       </div>
     </div>
+
   )
 }
 

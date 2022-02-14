@@ -2,6 +2,8 @@
   import MyTripCard from './MyTripCard';
   import { Container, Row } from 'reactstrap'
   import BodyNav from '../BodyNav';
+  import '../../css/CreateTrip.css'
+
 
   function MyTrips() {
     // need a map after pulling entire trip collection from the database 
@@ -27,10 +29,7 @@
         <Row xs="1" m='2' l='2' xl="2"  >
         {allTrips.map(trip =>{
           return(
-          
             <MyTripCard tripId={trip._id} budget={trip.budget} expenses={trip.expenses} name={trip.name} length={trip.length} cost={trip.cost}/>
-        
-
             )
           })}
             </Row>

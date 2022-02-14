@@ -48,7 +48,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
         .then(window.location.reload(false));
     }
     return ( 
-    <Col>
+    <Col className=" trip-card-container">
     <CardColumns>
         <Card className="main-card">
         <CardTitle className="trip-title">
@@ -70,7 +70,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
             <CardSubtitle className="total-cost">
                 <span className="span-budget">Trip Length:</span> {length}
             </CardSubtitle>
-            <Button className="more-details" color="primary" onClick={toggleCard} style={{ marginBottom: '1rem' }} >
+            <Button className="more-details-button" color="primary" onClick={toggleCard} style={{ marginBottom: '1rem' }} >
                 More Details
             </Button>
             <Collapse isOpen={ toggle }>
@@ -82,17 +82,17 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
                 <CardText className="expenses-list">  <TripCardExpenses tripExpenses = {expenses} /> </CardText>
                 </Card>
             </Collapse>
-            <Button className="more-details" color="primary" onClick={updateToggle} style={{ marginBottom: '1rem' }} >
+            <Button className="update-expenses-button" color="primary" onClick={updateToggle} style={{ marginBottom: '1rem' }} >
                 Update Expenses
             </Button>
             <Collapse isOpen={ toggleUpdate }>
                 <Card>  
                     <AddExpenseItem expenseList= {tripExpenses} setExpenseList={setTripExpenses} totalCost={currentCost} setTotalCost={setCurrentCost}/>
                     <ExpenseList expenseList= {tripExpenses} setExpenseList={setTripExpenses}/>
-                    <button onClick={handleTripUpdate}>Update Trip Expenses</button>
+                    <button className="update-trip-exepenses-button" onClick={handleTripUpdate}>Update Trip Expenses</button>
                 </Card>
             </Collapse>
-            <Button className="more-details" color="primary" onClick={deleteToggle} style={{ marginBottom: '1rem' }} >
+            <Button className="delete-trip-button" color="primary" onClick={deleteToggle} style={{ marginBottom: '1rem' }} >
             Delete Trip
             </Button>
             <Collapse isOpen={ toggleDelete }>
