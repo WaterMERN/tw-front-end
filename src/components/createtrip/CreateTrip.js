@@ -20,34 +20,44 @@ function CreateTrip() {
 // console.log(trip)
 // NEED A CALULATE TOTAL COST FUNCTION USE FILTER METHOD FOR COST FROM EXPENSES then set that total to totalCost State 
 //can get data to post to db 50% of the time on 1st try 100% on second try if I click again without changing the data
-let newTrip = {
-    name: tripName,
-    budget: tripBudget,
-    length: tripLength,
-    cost:  totalCost,
-    expenses: expenseList
-  }
-  console.log(newTrip)
-  const getTripData = () => {
-    
-    //  console.log(trip) 
+  let newTrip = {
+      name: tripName,
+      budget: tripBudget,
+      length: tripLength,
+      cost:  totalCost,
+      expenses: expenseList,
+      owner: localStorage.getItem('User')
+      
+    }
+    console.log(newTrip)
+    const getTripData = () => {
+      
+      //  console.log(trip) 
+    }
+
+  const authorizeURL = { Authorization:` Bearer ${localStorage.getItem('token')}`}
+  console.log (authorizeURL)
+  const postTrips = 'http://localhost:8000/trips'
+  const handleTripSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      await axios({
+        method: 'post',
+        url: postTrips,
+        data: newTrip,
+        headers: authorizeURL
+      })
+      .then(res => console.log(res))
+    } catch (error) {
+
+    }
   }
 
-const postTrips = 'http://localhost:8000/trips'
-const handleTripSubmit = async (event) => {
-  event.preventDefault()
-  try {
-    await axios({
-      method: 'post',
-      url: postTrips,
-      data: newTrip
-    })
-    .then(res => console.log(res))
-  } catch (error) {
-    
+  if (!localStorage.getItem('token')){
+    return (
+      <h1 className='login-message'> Please go to Home page and login to access Create Trip</h1>
+    )
   }
-
-}
 
 
   return (
@@ -98,6 +108,7 @@ const handleTripSubmit = async (event) => {
       </FormGroup>
      
     </Form>
+
     <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
     <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
    <button onClick={handleTripSubmit}>Submit Trip</button>

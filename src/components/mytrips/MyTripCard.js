@@ -9,7 +9,7 @@ import ExpenseList from '../createtrip/ExpenseList'
 
 // NEEDS Totals, expenseList, add expense components and save trip button all nested inside of trip details drop down button
 
-const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
+const MyTripCard = ({tripId, budget, expenses, name, length, cost }) => {
     // console.log(tripId)
     const [toggle, setToggle] = useState(false)
     const toggleCard = () => setToggle(!toggle)  //setting toggle to whatever it is not 
@@ -24,13 +24,16 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
     const [currentCost, setCurrentCost] = useState(cost)
 
     // console.log(tripExpenses)
+    const authorizeURL = { Authorization:` Bearer ${localStorage.getItem('token')}`}   
+    // console.log (authorizeURL)
     const deleteTrip = `http://localhost:8000/trips/${tripId}`
     const handleTripDelete = async (event) => {
         event.preventDefault()
           await axios({
             method: 'DELETE',
             url: deleteTrip,
-            data: null
+            data: null,
+            headers: authorizeURL
           })
           .then(res => console.log(res))
           .then(window.location.reload(false))
@@ -43,9 +46,10 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
             method: "PUT",
             url: updateTrip,
             data: {expenses: tripExpenses},
+            headers: authorizeURL
         })
         .then((res) => console.log(res))
-        .then(window.location.reload(false));
+        
     }
     return ( 
     <Col>

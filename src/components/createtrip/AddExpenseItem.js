@@ -2,7 +2,7 @@ import React from 'react'
 import { List, FormGroup, Label, Input, Form, Row, Card } from 'reactstrap'
 import { useState } from 'react'
 import '../../css/addexpenseitem.css'
-
+import Totals from '../Totals'
 //state for this component is: 
 
 
@@ -12,33 +12,94 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
     const [itemCategory, setItemCategory] = useState('')
     const [itemCost, setItemCost] = useState(0)
     const [itemTitle, setItemTitle] = useState('')
+    // const [foodTotal, setFoodTotal] =useState(0)
+    // const [lodgingTotal, setLodgingTotal]= useState(0)
+    // const [transportationTotal, setTransportationTotal]=useState(0)
+    // const [otherTotal, setOtherTotal] =useState(0)
+    // const [expenseTotal, setExpenseTotal] = useState(0)
+
     // console.log(itemCategory)
     // console.log(itemCost)
     // console.log(itemTitle)
+    let foodTotal = 0
+    let transportationTotal = 0
+    let lodgingTotal = 0
+    let  otherTotal = 0 
+    const countCategoryTotals = () => { // console.log(expenseItem)
 
-    // console.log(expenseItem)
-
+    let foodArray = expenseList.filter((item) => {
+        if (item.category === "Food") return item
+    })
+    // console.log(foodArray)
+    let transportationArray = expenseList.filter((item) => {
+        if (item.category === "Transportation") return item
+    })
+    // console.log(transportationArray)
+    let lodgingArray = expenseList.filter((item) => {
+        if (item.category === "Lodging") return item
+    })
+    // console.log(lodgingArray)
+    let otherArray = expenseList.filter((item) => {
+        if (item.category === "Other") return item
+    })
+    // console.log(otherArray)
+    
+    foodArray.forEach(item => {
+        let newItem = parseInt(item.cost)
+        foodTotal += newItem
+        return foodTotal
+    })
+    transportationArray.forEach(item => {
+        let newItem = parseInt(item.cost)
+        transportationTotal += newItem
+        return transportationTotal
+    })
+    lodgingArray.forEach(item => {
+        let newItem = parseInt(item.cost)
+        lodgingTotal += newItem
+        return lodgingTotal
+    })
+    otherArray.forEach(item => {
+        let newItem = parseInt(item.cost)
+        otherTotal += newItem
+        return otherTotal
+    })
+    
+    }
+   countCategoryTotals()
+    //     if (itemCategory === "Food"){
+    //         setFoodTotal(foodTotal + parseInt(itemCost))
+    //     } 
+    //     if (itemCategory === "Transportation"){
+    //         setTransportationTotal(transportationTotal + parseInt(itemCost))
+    //     } 
+    //     if (itemCategory === "Other"){
+    //         setOtherTotal(otherTotal + parseInt(itemCost))
+    //     } 
+    //     if (itemCategory === "Lodging"){
+    //         setLodgingTotal(lodgingTotal + parseInt(itemCost))
+    //     } 
+    //     setExpenseTotal(foodTotal + transportationTotal + otherTotal + lodgingTotal + parseInt(itemCost))
+    // } 
+    // countTotals()
     const addExpense = () => {
         const newItem = ({
             category: itemCategory,
             title: itemTitle,
             cost: itemCost
-        })
-        // setExpenseItem({
-        //     category: itemCategory,
-        //     title:  itemTitle,
-        //     cost: itemCost
-        // })
-        setExpenseList([...expenseList,newItem])
-        console.log(expenseList, "list of expenses")
-        console.log(newItem, "item")
-    }
-    let currentTotal = 0
+        });
+        setExpenseList([...expenseList,newItem]);
+        console.log(expenseList, "list of expenses");
+        console.log(newItem, "item");
+        
+        // console.log(itemCost)
+    };
+    let currentTotal = 0;
     const calculateTotal = () => {
         expenseList.forEach(item =>{
-            let newItem = parseInt(item.cost)
-            currentTotal += newItem})
-            setTotalCost(currentTotal)
+            let newItem = parseInt(item.cost);
+            currentTotal += newItem});
+            setTotalCost(currentTotal);
             // console.log(totalCost)
             return currentTotal
     }
@@ -87,6 +148,7 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
                 </Form> 
                 <button type="submit" onClick={addExpense}> Add Expense </button> 
             </Row>
+            <Totals lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal} expenseTotal={totalCost}/>
 
         </div>
     )
