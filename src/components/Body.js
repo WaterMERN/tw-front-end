@@ -9,6 +9,7 @@ import Home from './Home';
 function Body() {
  
     return (
+        <>
         <div className='home-container'>
             <BodyNav/>
             <Routes>
@@ -18,6 +19,7 @@ function Body() {
                 <Route path="/about" element={<About/>} />
             </Routes>
         </div>
+        </>
         // new trip
         // previous trips
     )

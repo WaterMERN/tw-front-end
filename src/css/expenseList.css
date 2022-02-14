@@ -2,10 +2,12 @@
     margin: 5px;
 }
 .labels{
-    color: rgb(146, 23, 228)
+    color: #0396A6;
+    font-weight: 700;
 }
 span{
-    color:black
+    color:black;
+    font-weight: 400;
 }
 .expense-item-container{
     display:flex;
@@ -14,4 +16,10 @@ span{
 p{
     display:inline-block;
     margin: 10px;
+}
+
+.current-expenses-span{
+    margin-left:15px;
+    font-weight: 500;
+
 }

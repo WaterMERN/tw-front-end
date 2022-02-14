@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 function NavBar() {
   //HEADER ANDNAVBAR Combined
   return (
+    <>
     <div className='header-container'>
       <h2 className="travel-watcher-headline">TRAVEL WATCHER:</h2>
       <h3 className="header-tagline">Track your travel expenses with ease...</h3>
+
       <div className='nav-container'>
         <ul>
           <Link to='/'><li>Home</li></Link>
@@ -15,6 +17,8 @@ function NavBar() {
         </ul>
       </div>
     </div>
+    
+     </>
 
   )
 }

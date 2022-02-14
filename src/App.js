@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Body from './components/Body';
 import NavBar from './components/NavBar';
-
+import Footer from './components/Footer';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Body />
+      <Footer/>
     </div>
   );
 }

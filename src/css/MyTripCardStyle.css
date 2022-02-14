@@ -9,6 +9,14 @@
     margin-left: 15px;
 }
 
+
+
+/* .trip-card-container{
+  background-color: #D99A4E;
+  
+
+} */
+
 .trip-title{
     margin: 20px;
     font-weight: 800;
@@ -22,6 +30,8 @@
     
 }
 
+
+
 span.category{
     font-weight: 600;
 }
@@ -34,9 +44,9 @@ span.category{
 }
 
 .main-card{
-    border: 1px solid black;
+    border:2px solid black;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 
@@ -74,6 +84,10 @@ button{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /* background-color: #0396A6; */
+    background-color: #D99A4E;
+    border-radius: 10px;
+   
     }
 
 .more-details-button{
@@ -111,9 +125,19 @@ button{
 
 @media only screen and (max-width: 500px){
     .trip-card-container{
-        width: 499px;
+        width: 425px;
         align-items: center;
         justify-content: center;
         align-content: center;
+    }
+    .home-container{
+        width: 500px;
+    }
+    .create-form-container{
+        width:500px;
+    }
+
+    .main-card{
+        align-items: center;
     }
 }

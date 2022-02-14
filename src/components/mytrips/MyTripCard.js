@@ -78,7 +78,7 @@ const MyTripCard = ({tripId, budget, expenses, name, length, cost}) => {
                 {/* <CardBody>
                     Details about this trip: 
                 </CardBody> */}
-                <CardText className="expenses"> <span>Current Expenses:</span><br/> </CardText>
+                <CardText className="expenses"> <span className="current-expenses-span">Current Expenses:</span><br/> </CardText>
                 <CardText className="expenses-list">  <TripCardExpenses tripExpenses = {expenses} /> </CardText>
                 </Card>
             </Collapse>

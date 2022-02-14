@@ -14,6 +14,13 @@ code {
     monospace;
 }
 
+.nav-tabs{
+  margin-top:45px;
+ 
+}
+
+
+
 .header-container {
   height: 350px;
   background-image: url("img/hero1.jpg");
@@ -33,11 +40,20 @@ code {
   color:white;
 }
 
+/* .home-container {
+  width: 900px;
+  height: auto;
+  margin: 100px auto; */
+  /* border: 1px solid rgb(197, 197, 197); */
+/* } */
+
 .home-container {
   width: 900px;
   height: auto;
   margin: 100px auto;
-  border: 1px solid rgb(197, 197, 197);
+  border: 2px solid black;
+  border-radius: 10px;
+  /* border: 1px solid rgb(197, 197, 197); */
 }
 
 .nav-container {
@@ -109,5 +125,20 @@ margin-left: 10px;
 margin-top: 15px;
 }
 
-.list-container {
+.landing-page{
+  height: 300px;
+  background-color: grey;
+}
+
+.footer-container{
+  background-color:white;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.footer-title{
+ color: black;
 }

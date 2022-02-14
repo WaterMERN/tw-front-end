@@ -69,7 +69,7 @@
       <div className='create-container'>
         {/* <BodyNav /> */}
         <div className='create-form-container'>
-      <Form>
+      <Form className="create-trip-form">
         <FormGroup>
           <Label>
             <h3 className="create-new-trip-title">Create a new trip</h3>

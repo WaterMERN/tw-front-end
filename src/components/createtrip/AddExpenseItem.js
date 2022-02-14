@@ -105,7 +105,9 @@ function AddExpenseItem({lodgingTotal, setLodgingTotal,otherTotal, setOtherTotal
                         />
                     </FormGroup>
                 </Form> 
+                <div className="add-expense-button-container">
                 <button className="add-expense-button" type="submit" onClick={addExpense}> Add Expense </button> 
+                </div>
             </Row>
             <Totals className="totals-component"lodgingTotal={lodgingTotal} otherTotal={otherTotal} foodTotal={foodTotal} transportationTotal={transportationTotal} expenseTotal={expenseTotal}/>
         </div>
