@@ -5,6 +5,7 @@ import axios from "axios"
 import ExpenseList from './ExpenseList';
 import AddExpenseItem from './AddExpenseItem';
 import BodyNav from '../BodyNav';
+import { Link } from 'react-router-dom';
 
 function CreateTrip() {
   const [tripName, setTripName] =useState('')
@@ -12,6 +13,7 @@ function CreateTrip() {
   const [tripLength, setTripLength] = useState(0)
   const [totalCost, setTotalCost] = useState(0)
   const [expenseList, setExpenseList] = useState([])
+ 
   // console.log(tripName)
   // console.log( tripBudget)
   // console.log(tripLength)
@@ -39,7 +41,7 @@ function CreateTrip() {
   console.log (authorizeURL)
   const postTrips = 'http://localhost:8000/trips'
   const handleTripSubmit = async (event) => {
-    event.preventDefault()
+    
     try {
       await axios({
         method: 'post',
@@ -51,6 +53,8 @@ function CreateTrip() {
     } catch (error) {
 
     }
+   
+
   }
 
   if (!localStorage.getItem('token')){
@@ -64,55 +68,58 @@ function CreateTrip() {
     <div className='create-container'>
       <BodyNav />
       <div className='create-form-container'>
-    <Form>
-      <FormGroup>
-        <Label>
-          <h2>Create a new trip</h2>
-        </Label>
-        </FormGroup>
-      <FormGroup>
-        <Label>
-          Trip Name
-        </Label>
-        <Input
-          onChange={(event) => { setTripName(event.target.value) }}
-          id="tripname"
-          name="trip"
-          placeholder="trip name"
-          type="text"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>
-          Desired Budget
-        </Label>
-        <Input
-          onChange={(event) => { setTripBudget(event.target.value) }}
-          id="budget"
-          name="budget"
-          placeholder="budget"
-          type="text"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>
-          Trip Length
-        </Label>
-        <Input
-          onChange={(event) => { setTripLength(event.target.value) }}
-          id="exampleNumber"
-          name="number"
-          placeholder="Trip Length"
-          type="number"
-        />
-      </FormGroup>
-     
-    </Form>
+        <Form>
+          <FormGroup>
+            <Label>
+              <h2>Create a new trip</h2>
+            </Label>
+            </FormGroup>
+          <FormGroup>
+            <Label>
+              Trip Name
+            </Label>
+            <Input
+              onChange={(event) => { setTripName(event.target.value) }}
+              id="tripname"
+              name="trip"
+              placeholder="trip name"
+              type="text"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>
+              Desired Budget
+            </Label>
+            <Input
+              onChange={(event) => { setTripBudget(event.target.value) }}
+              id="budget"
+              name="budget"
+              placeholder="budget"
+              type="text"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>
+              Trip Length
+            </Label>
+            <Input
+              onChange={(event) => { setTripLength(event.target.value) }}
+              id="exampleNumber"
+              name="number"
+              placeholder="Trip Length"
+              type="number"
+            />
+          </FormGroup>
+        
+        </Form>
 
-    <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
-    <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
-   <button onClick={handleTripSubmit}>Submit Trip</button>
+      <AddExpenseItem expenseList= {expenseList} setExpenseList={setExpenseList} totalCost={totalCost} setTotalCost={setTotalCost}/>
+      <ExpenseList expenseList ={expenseList} setExpenseList={setExpenseList}/>
+      
+        <Link to= '/mytrips'> <button onClick={handleTripSubmit}>Submit Trip</button></Link>
+     
    </div>
+    
 </div>
   
   )
