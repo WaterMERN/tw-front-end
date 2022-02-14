@@ -30,19 +30,19 @@ function AddExpenseItem({ expenseList, setExpenseList, totalCost, setTotalCost})
     let foodArray = expenseList.filter((item) => {
         if (item.category === "Food") return item
     })
-    console.log(foodArray)
+    // console.log(foodArray)
     let transportationArray = expenseList.filter((item) => {
         if (item.category === "Transportation") return item
     })
-    console.log(transportationArray)
+    // console.log(transportationArray)
     let lodgingArray = expenseList.filter((item) => {
         if (item.category === "Lodging") return item
     })
-    console.log(lodgingArray)
+    // console.log(lodgingArray)
     let otherArray = expenseList.filter((item) => {
         if (item.category === "Other") return item
     })
-    console.log(otherArray)
+    // console.log(otherArray)
     
     foodArray.forEach(item => {
         let newItem = parseInt(item.cost)
