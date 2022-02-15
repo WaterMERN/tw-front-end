@@ -7,10 +7,8 @@ import About from './About';
 import Home from './Home';
 
 function Body() {
- 
     return (
         <div className='home-container'>
-            
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/createtrip" element={<CreateTrip />} />
@@ -18,8 +16,6 @@ function Body() {
                 <Route path="/about" element={<About/>} />
             </Routes>
         </div>
-        // new trip
-        // previous trips
     )
 }
 
