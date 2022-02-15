@@ -1,5 +1,7 @@
+
   //this needs state for each catgory total 
   // import '../../css/CreateTrip.css'
+import React from "react";
 
   const Totals = ({foodTotal, expenseTotal, lodgingTotal, otherTotal, transportationTotal}) => {
 
@@ -13,6 +15,7 @@
           <h5>Lodging: ${lodgingTotal}</h5>
           <h5>Other: ${otherTotal}</h5>
           <h5>Total: ${expenseTotal}</h5>
+
         </div>
       </div>
 

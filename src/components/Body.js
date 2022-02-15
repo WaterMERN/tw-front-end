@@ -11,7 +11,7 @@ function Body() {
     return (
         <>
         <div className='home-container'>
-            <BodyNav/>
+
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/createtrip" element={<CreateTrip />} />
