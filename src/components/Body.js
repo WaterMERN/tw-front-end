@@ -5,6 +5,7 @@ import CreateTrip from './createtrip/CreateTrip';
 import MyTrips from './mytrips/MyTrips';
 import About from './About';
 import Home from './Home';
+
 function Body() {
  
     return (
