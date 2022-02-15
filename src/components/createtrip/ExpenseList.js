@@ -3,28 +3,32 @@
   import ExpenseListItem from './ExpenseListItem'
   import '../../css/CreateTrip.css'
 
-  function ExpenseList({lodgingTotal, setLodgingTotal, otherTotal, setOtherTotal, foodTotal, setFoodTotal, transportationTotal, setTransportationTotal, expenseTotal, setExpenseTotal, expenseList, setExpenseList, totalCost, setTotalCost}, itemCategory, setItemCategory, itemCost, setItemCost, itemTitle, setItemTitle) {
+  function ExpenseList({lodgingTotal, setLodgingTotal, otherTotal, setOtherTotal, foodTotal, setFoodTotal, transportationTotal, setTransportationTotal, expenseTotal, setExpenseTotal, expenseList, setExpenseList, totalCost, setTotalCost, itemCategory, setItemCategory, itemCost, setItemCost, itemTitle, setItemTitle}) { 
     // take expense array from trip data and map through expenses 
     // use state expenseList to set array for manipulation by add expense component
     //button needs to delete expense item from expense list array with state update 
     // console.log(expenseList)
 
     const subtractTotals = () => {
+      console.log(itemCost, "item cost")
+      console.log(itemCategory, "this is the category")
+      console.log(expenseList, "this is the expense list")
       if (itemCategory === "Food"){
-          setFoodTotal(foodTotal - parseInt(itemCost))
+          setFoodTotal(foodTotal -= parseInt(itemCost))
       } 
       if (itemCategory === "Transportation"){
-          setTransportationTotal(transportationTotal - parseInt(itemCost))
+          setTransportationTotal(transportationTotal -= parseInt(itemCost))
       } 
       if (itemCategory === "Other"){
-          setOtherTotal(otherTotal - parseInt(itemCost))
+          setOtherTotal(otherTotal -= parseInt(itemCost))
       } 
       if (itemCategory === "Lodging"){
-          setLodgingTotal(lodgingTotal - parseInt(itemCost))
+          setLodgingTotal(lodgingTotal -= parseInt(itemCost))
       } 
-      // setFoodTotal(foodTotal - parseInt(itemCost) )
-      setExpenseTotal(expenseTotal - foodTotal || lodgingTotal || otherTotal || transportationTotal)
+      // // setFoodTotal(foodTotal - parseInt(itemCost) )
+      // setExpenseTotal(expenseTotal - foodTotal || lodgingTotal || otherTotal || transportationTotal)
       // setExpenseTotal(foodTotal - transportationTotal - otherTotal - lodgingTotal - parseInt(itemCost))
+      setExpenseTotal(expenseTotal -= parseInt(itemCost))
   } 
 
     const removeExpense = (expense) => {
