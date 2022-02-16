@@ -8,7 +8,7 @@
     const authorizeURL = { 'Accept': 'application/json', 
     'Authorization' :` Bearer ${localStorage.getItem('token')}`}
   console.log (authorizeURL)
-    const getTrips = 'http://localhost:8000/trips'
+    const getTrips = 'https://gentle-badlands-55191.herokuapp.com/trips'
     const fetchTrips = () => {
         fetch(getTrips, 
           { headers: authorizeURL})

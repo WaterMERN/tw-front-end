@@ -22,7 +22,7 @@
 
         const authorizeURL = { Authorization:` Bearer ${localStorage.getItem('token')}`}   
   
-        const deleteTrip = `http://localhost:8000/trips/${tripId}`
+        const deleteTrip = `https://gentle-badlands-55191.herokuapp.com/trips/${tripId}`
         const handleTripDelete = async (event) => {
             event.preventDefault()
             await axios({
@@ -35,7 +35,7 @@
             .then(window.location.reload(false))
         }
 
-        const updateTrip = `http://localhost:8000/trips/${tripId}`
+        const updateTrip = `https://gentle-badlands-55191.herokuapp.com/trips/${tripId}`
         const handleTripUpdate = async (event) => {
             event.preventDefault();
             await axios({
