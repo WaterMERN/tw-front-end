@@ -4,9 +4,7 @@
   import BodyNav from '../BodyNav';
 
   function MyTrips( ) {
-    // need a map after pulling entire trip collection from the database 
     const [ allTrips, setAllTrips] = useState(null)
-  
     const authorizeURL = { 'Accept': 'application/json', 
     'Authorization' :` Bearer ${localStorage.getItem('token')}`}
   console.log (authorizeURL)

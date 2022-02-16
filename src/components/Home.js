@@ -2,7 +2,6 @@
     import { InputGroup, InputGroupText, Input, Button, Collapse} from 'reactstrap'
     import '../css/home.css'
     import axios from "axios";
-    import BodyNav from "./BodyNav";
 
     const Home = () => {
         let newUser = {
@@ -38,7 +37,6 @@
         const createURL = 'http://localhost:8000/createaccount'
         const loginURL = 'http://localhost:8000/login'
         const createAccount = async (event) => {
-            //axios post 
             event.preventDefault()
             setAccountText('Account setup Login to  create your fist trip!')
             try {
@@ -54,7 +52,6 @@
             
         }
         const loginAccount = async (event) => {
-            //axios post
             event.preventDefault()
             setAccountText('Login Successful')
             try {
@@ -64,7 +61,6 @@
                 data: login
                 })
                 .then(res => localStorage.setItem("token", res.data.token))
-                //take res.data.token and assign it to a state that can be used in context
                 .then(localStorage.setItem('User', login.email))                
             } catch (error) {  
             }
