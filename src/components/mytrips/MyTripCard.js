@@ -32,7 +32,9 @@
                 headers: authorizeURL
             })
             .then(res => console.log(res))
-            
+            setTimeout(()=> {
+                window.location.reload(false)
+              }, 1000)
         }
 
         const updateTrip = `https://gentle-badlands-55191.herokuapp.com/trips/${tripId}`
@@ -46,6 +48,9 @@
             })
             .then((res) => console.log(res))
             setToggleUpdate(false)
+            setTimeout(()=> {
+                window.location.reload(false)
+              }, 1000)
         }
         return ( 
             <Col className=" trip-card-container">
