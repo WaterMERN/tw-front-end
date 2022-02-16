@@ -20,13 +20,12 @@ We added a user authentication feature so that you can login and view all of you
 Adding a section that shows the daily budget 
 Add a feature for the Total to turn red if you go over your desired budget 
 
------> Component Heirarchy: 
 
 Project Creators: 
-AnnieRae Cioccolanti 
-Ryan Baier
-Daniel Gardner 
-Jordan Stotts
+AnnieRae Cioccolanti : https://www.linkedin.com/in/annierae-cioccolanti/
+Ryan Baier : https://www.linkedin.com/in/ryan-baier/
+Daniel Gardner : https://www.linkedin.com/in/dannygardner/
+Jordan Stotts " https://www.linkedin.com/in/jordanstotts/
 
 Technologies Used: 
 HTML 
