@@ -13,8 +13,9 @@
       <>
       {expenseList.map(expense => {
         return(
-        <div>
+        <div key= {expense.title} >
           <ExpenseListItem  
+           key = {expense}
             expense={expense}
             title={expense.title}
             cost={expense.cost}

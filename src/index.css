@@ -26,6 +26,10 @@ code {
   opacity: .9;
 }
 
+.tagline-container{
+  height:450px;
+  display:flex;
+}
 
 .travel-watcher-headline,
 .header-tagline{
@@ -177,7 +181,7 @@ code {
   border-radius: 10px;
   display: flex;
   z-index: 2;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .create-form-container {
@@ -278,6 +282,11 @@ span.expense-item {
 
 /* ------Mobile Phones ------- */
 @media only screen and (max-width: 500px) {
+.tagline-container{
+  width:80%;
+
+}
+
   .create-container {
     display: flex;
     align-items: center;
@@ -306,7 +315,7 @@ span.expense-item {
   }
 
 }
-
+/* ---Desktop--- */
 @media only screen and (min-width: 768px) {
   .create-container {
     display: flex;

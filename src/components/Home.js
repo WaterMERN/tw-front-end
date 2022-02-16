@@ -78,12 +78,12 @@
                 </Button>
                 <Collapse isOpen= { toggleLogin }>
                 <h4>{ accountText }</h4>
-                <InputGroup>
+                <InputGroup className="login-input">
                     <InputGroupText >Username</InputGroupText>
                     <Input className="login-input" id="email" onChange={handleChange} value={user.email} placeholder="email" />
                 </InputGroup>
                 <br />
-                <InputGroup>
+                <InputGroup className="login-input">
                     <InputGroupText >Password</InputGroupText>
                     <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
                 </InputGroup>
@@ -95,12 +95,12 @@
                 </Button>
                 <Collapse isOpen= { toggleCreate }>
                 <h4>{ accountText }</h4>
-                <InputGroup>
+                <InputGroup className="login-input">
                     <InputGroupText >Username</InputGroupText>
                     <Input className="login-input" id="email" onChange={handleChange} value={user.email} placeholder="email" />
                 </InputGroup>
                 <br />
-                <InputGroup>
+                <InputGroup className="login-input">
                     <InputGroupText >Password</InputGroupText>
                     <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
                 </InputGroup>

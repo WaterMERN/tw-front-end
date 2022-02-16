@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+-------> Project Description: 
+Our app is called Travel Watcher . It's a budget tracker that helps you plan and keep better track of your expenses while you are traveling or on a trip. There are input fields for different types of expenses that you can add detials and cost to. You put in the desired budget you have and the expenses are subracted from that desired budget as you add them. Once you input your trip details you can hit the submit button which will save your information on a card. When you click on the MyTrips tab, your card and past trip cards will populate. You can edit them here as well or look back at them for reference for future trips. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We added a user authentication feature so that you can login and view all of your trips 
 
-## Available Scripts
+------>Stretch goals: 
+Adding a section that shows the daily budget 
+Add a feature for the Total to turn red if you go over your desired budget 
 
-In the project directory, you can run:
+------>WireFrames: 
 
-### `npm start`
+#### redesigned front end mockup
+![alt text](https://github.com/WaterMERN/ProjectPlanning/blob/main/wireframes/2-10%20frontend%20remock.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+----->MVP User Stores: 
+As a user I want to be able to enter information for my desired trip budget and length 
+As a user I want to be able to save my trip information for later reference 
+As a user I want to enter expenses in and see the total amount 
+As a user I want to be able to log in and create account so I can save my trip information for later 
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-----> Component Heirarchy: 

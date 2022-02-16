@@ -10,12 +10,6 @@ total-cost,
 }
 
 
-
-/* .trip-card-container{
-  background-color: #D99A4E;
-  
-} */
-
 .trip-title{
     margin: 20px;
     font-weight: 800;
@@ -28,8 +22,6 @@ total-cost,
     margin-left: 15px;
     
 }
-
-
 
 span.category{
     font-weight: 600;
@@ -50,16 +42,22 @@ span.category{
 
 
 .span-budget, 
+.span-length
 .span-cost{
     font-weight: 800;
 }
 
-.span-budget{
+.span-budget,
+.span-length{
     color:green;
+    font-weight: 800;
+    margin-top: 20px;
 }
 
 .span-cost{
     color: darkred;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 button.more-details-button, 
@@ -83,7 +81,6 @@ button{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* background-color: #0396A6; */
     background-color: #D99A4E;
     border-radius: 10px;
    
