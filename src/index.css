@@ -177,7 +177,7 @@ code {
   border-radius: 10px;
   display: flex;
   z-index: 2;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .create-form-container {
