@@ -1,6 +1,6 @@
     import React, { useState } from 'react'
     import axios from 'axios'
-    import { Col, CardColumns, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Collapse} from 'reactstrap'
+    import { Col, CardColumns, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Collapse, Fade} from 'reactstrap'
     import '../../css/MyTripCardStyle.css'
     import TripCardExpenses from './TripCardExpenses'
     import AddExpenseItem from '../createtrip/AddExpenseItem'
@@ -45,7 +45,7 @@
                 headers: authorizeURL
             })
             .then((res) => console.log(res))
-            
+            setToggleUpdate(false)
         }
         return ( 
             <Col className=" trip-card-container">
