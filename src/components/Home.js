@@ -34,8 +34,8 @@
             console.log(login);
         }
         
-        const createURL = 'http://localhost:8000/createaccount'
-        const loginURL = 'http://localhost:8000/login'
+        const createURL = 'https://gentle-badlands-55191.herokuapp.com/createaccount'
+        const loginURL = 'https://gentle-badlands-55191.herokuapp.com/login'
         const createAccount = async (event) => {
             event.preventDefault()
             setAccountText('Account setup Login to  create your fist trip!')
@@ -85,7 +85,7 @@
                 <br />
                 <InputGroup>
                     <InputGroupText >Password</InputGroupText>
-                    <Input className="login-input" id="password" onChange={handleChange} value={user.password} placeholder="password" />
+                    <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
                 </InputGroup>
             <Button onClick={loginAccount}> Login into Account</Button>
             
@@ -102,7 +102,7 @@
                 <br />
                 <InputGroup>
                     <InputGroupText >Password</InputGroupText>
-                    <Input className="login-input" id="password" onChange={handleChange} value={user.password} placeholder="password" />
+                    <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
                 </InputGroup>
                 <Button onClick={createAccount }> Create New Account</Button>
                 </Collapse>

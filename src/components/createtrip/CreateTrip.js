@@ -31,7 +31,7 @@
 
       const authorizeURL = { Authorization:` Bearer ${localStorage.getItem('token')}`}
       console.log (authorizeURL)
-      const postTrips = 'http://localhost:8000/trips'
+      const postTrips = 'https://gentle-badlands-55191.herokuapp.com/'
       const handleTripSubmit = async (event) => {
         setSubmitText('Trip Submitted. Go to My Trips to view')
         try {
