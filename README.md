@@ -3,9 +3,6 @@ Our app is called Travel Watcher . It's a budget tracker that helps you plan and
 
 We added a user authentication feature so that you can login and view all of your trips 
 
------->Stretch goals: 
-Adding a section that shows the daily budget 
-Add a feature for the Total to turn red if you go over your desired budget 
 
 ------>WireFrames: 
 
@@ -14,9 +11,32 @@ Add a feature for the Total to turn red if you go over your desired budget
 
 
 ----->MVP User Stores: 
-As a user I want to be able to enter information for my desired trip budget and length 
-As a user I want to be able to save my trip information for later reference 
-As a user I want to enter expenses in and see the total amount 
-As a user I want to be able to log in and create account so I can save my trip information for later 
+- As a user I want to be able to enter information for my desired trip budget and length 
+- As a user I want to be able to save my trip information for later reference 
+- As a user I want to enter expenses in and see the total amount 
+- As a user I want to be able to log in and create account so I can save my trip information for later 
+
+------>Stretch goals: 
+Adding a section that shows the daily budget 
+Add a feature for the Total to turn red if you go over your desired budget 
 
 -----> Component Heirarchy: 
+
+Project Creators: 
+AnnieRae Cioccolanti 
+Ryan Baier
+Daniel Gardner 
+Jordan Stotts
+
+Technologies Used: 
+HTML 
+CSS 
+JavaScript 
+React 
+ReactStrap
+MongoDB
+Express 
+Node 
+Heroku 
+
+Deploy Link: 
