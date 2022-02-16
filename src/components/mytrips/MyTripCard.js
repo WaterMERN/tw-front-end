@@ -8,7 +8,6 @@
 
 
     const MyTripCard = ({tripId, budget, expenses, name, length, cost }) => {
-        // console.log(tripId)
         const [toggle, setToggle] = useState(false)
         const toggleCard = () => setToggle(!toggle) 
         
