@@ -32,7 +32,7 @@
                 headers: authorizeURL
             })
             .then(res => console.log(res))
-            .then(window.location.reload(false))
+            
         }
 
         const updateTrip = `https://gentle-badlands-55191.herokuapp.com/trips/${tripId}`
