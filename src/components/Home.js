@@ -85,7 +85,7 @@
                 <br />
                 <InputGroup>
                     <InputGroupText >Password</InputGroupText>
-                    <Input className="login-input" id="password" onChange={handleChange} value={user.password} placeholder="password" />
+                    <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
                 </InputGroup>
             <Button onClick={loginAccount}> Login into Account</Button>
             
@@ -102,7 +102,7 @@
                 <br />
                 <InputGroup>
                     <InputGroupText >Password</InputGroupText>
-                    <Input className="login-input" id="password" onChange={handleChange} value={user.password} placeholder="password" />
+                    <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
                 </InputGroup>
                 <Button onClick={createAccount }> Create New Account</Button>
                 </Collapse>
