@@ -275,7 +275,7 @@ body{
   /* ------Mobile Phones ------- */
   @media only screen and (max-width: 500px) {
   .tagline-container{
-    width:80%;
+    width:100;
   
   }
   

@@ -11,7 +11,7 @@ function NavBar() {
       <div className="nav-container">
         <ul>
           <li><Link className="link1" to="/">
-            Home
+            Login
           </Link></li>
          <li> <Link className="link1" to="/about"> 
             About
