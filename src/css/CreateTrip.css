@@ -38,10 +38,10 @@
 
     .home-container {
         height: auto;
-        margin: 10px auto;
+        margin: 100px auto;
         border-radius: 10px;
         display:flex;
-}
+    }
 
     .create-form-container{
         display:flex;
