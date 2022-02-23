@@ -38,7 +38,7 @@
         const loginURL = 'https://gentle-badlands-55191.herokuapp.com/login'
         const createAccount = async (event) => {
             event.preventDefault()
-            setAccountText('Account setup Login to  create your fist trip!')
+            setAccountText('--Account setup-- Login to create your fist trip!')
             try {
                 await axios({
                 method: 'post',
@@ -53,7 +53,7 @@
         }
         const loginAccount = async (event) => {
             event.preventDefault()
-            setAccountText('Login Successful')
+            setAccountText('--Login Successful-- Go to My Trips to view your trips or Create Another')
             try {
                 await axios({
                 method: 'post',
