@@ -55,7 +55,7 @@ function CreateTrip() {
   return (
     <div className="create-trip-page">
       <BodyNav />
-      <div className="create-container">
+      
         <div className="create-form-container">
           <Form className="create-trip-form">
             <FormGroup>
@@ -123,7 +123,7 @@ function CreateTrip() {
             Submit Trip
           </button>
         </div>
-      </div>
+      
     </div>
   );
 }

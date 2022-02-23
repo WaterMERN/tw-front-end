@@ -157,10 +157,10 @@
         justify-content: center;
         align-content: center;
         width:80%;
-        
-    
     }
-
+    .create-form-container{
+        width: 500px;
+    }
     .App{
         width:fit-content
         }
