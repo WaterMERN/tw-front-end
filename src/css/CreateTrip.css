@@ -150,7 +150,10 @@
     }
 
     /* ------Mobile Phones ------- */
-    @media only screen and (max-width: 550px){
+    @media only screen and (max-width: 500px){
+    .App{
+        width: fit-content;
+    }
     .create-container{
         display:flex;
         align-items: center;
@@ -159,7 +162,7 @@
         width:80%;
     }
     .create-form-container{
-        width: 500px;
+        width: fit-content;
     }
     .App{
         width:fit-content
