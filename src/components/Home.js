@@ -53,7 +53,7 @@
         }
         const loginAccount = async (event) => {
             event.preventDefault()
-            setAccountText('--Login Successful-- Go to My Trips to view your trips or Create Another')
+            setAccountText('--Login Successful-- Go to My Trips to view your trips')
             try {
                 await axios({
                 method: 'post',
@@ -73,23 +73,23 @@
                     <h4 className="landing-page-login">Log in or create an account to get started.</h4>
                 </div>
                 <div className="buttons">
-                <Button className="account-buttons login" color="primary" onClick={toggleLoginAccount } style={{ marginBottom: '1rem' }} >
-                Login 
-                </Button>
-                <Collapse isOpen= { toggleLogin }>
-                <h4>{ accountText }</h4>
-                <InputGroup className="login-input">
-                    <InputGroupText >Username</InputGroupText>
-                    <Input className="login-input" id="email" onChange={handleChange} value={user.email} placeholder="email" />
-                </InputGroup>
-                <br />
-                <InputGroup className="login-input">
-                    <InputGroupText >Password</InputGroupText>
-                    <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
-                </InputGroup>
-            <Button onClick={loginAccount}> Login into Account</Button>
+                    <Button className="account-buttons login" color="primary" onClick={toggleLoginAccount } style={{ marginBottom: '1rem' }} >
+                        Login </Button>
+                    <Collapse isOpen= { toggleLogin }>
+                    <h4>{ accountText }</h4>
+                    <InputGroup className="login-input">
+                        <InputGroupText >Username</InputGroupText>
+                        <Input className="login-input" id="email" onChange={handleChange} value={user.email} placeholder="email" />
+                    </InputGroup>
+                    <br />
+                    <InputGroup className="login-input">
+                        <InputGroupText >Password</InputGroupText>
+                        <Input className="login-input" id="password" type='password' onChange={handleChange} value={user.password} placeholder="password" />
+                    </InputGroup>
+                    <Button onClick={loginAccount}> Login into Account</Button>
             
-                </Collapse>
+                    </Collapse>
+                    
                 <Button className="account-buttons" color="primary" onClick={toggleCreateAccount} style={{ marginBottom: '1rem' }} >
                 Create Account
                 </Button>
@@ -107,8 +107,8 @@
                 <Button onClick={createAccount }> Create New Account</Button>
                 </Collapse>
                 </div>
-                <div className="login-foot">
-                </div>
+                {/* <div className="login-foot">
+                </div> */}
             </div>
         )
     }

@@ -150,18 +150,20 @@
     }
 
     /* ------Mobile Phones ------- */
-    @media only screen and (max-width: 500px){
-        .create-container{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-            width:80%;
-            
+    @media only screen and (max-width: 550px){
+    .create-container{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width:80%;
         
+    
+    }
+
+    .App{
+        width:fit-content
         }
-
-
     .create-trip-form{
         width:80%;
     }

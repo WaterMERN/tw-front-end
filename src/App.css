@@ -273,12 +273,20 @@ body{
   }
   
   /* ------Mobile Phones ------- */
-  @media only screen and (max-width: 500px) {
-  .tagline-container{
-    width:100;
-  
-  }
-  
+  @media only screen and (max-width: 550px) {
+    .App{
+      width:fit-content
+    }
+    .nav-container{
+      width:fit-content;
+    }
+    .tagline-container{
+      width:100;
+    
+    }
+    .header-container{
+      height: 250px
+    }
     .create-container {
       display: flex;
       align-items: center;
@@ -304,6 +312,10 @@ body{
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+    
+    .nav-home{
+      top: 160px
     }
   
   }
